@@ -28,6 +28,9 @@ const insertDataIntoTable = (data) => {
   tbody.innerHTML = content;
 };
 
+const setUpSortingActions = (data) => {
+};
+
 const alphabetComparatorByProp = (...props) => {
   if (props.length > 1) {
     const [propLevel1, propLevel2] = props;
