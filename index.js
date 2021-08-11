@@ -42,6 +42,11 @@ const setUpSortingActions = (data) => {
     insertDataIntoTable(sortedData);
   });
 
+  aboutCell.addEventListener("click", () => {
+    const sortedData = data.sort(alphabetComparatorByProp("about"));
+    insertDataIntoTable(sortedData);
+  });
+
 };
 
 const alphabetComparatorByProp = (...props) => {
