@@ -11,7 +11,26 @@ body {
   align-items: center;
 }
 
-.data-manager__table {
+.section {
   width: 50%;
   border: 1px dashed;
+}
+
+.table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.table__cell-about{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
+
+.table__about-content{
+    resize: none;
+    overflow: hidden;
+    white-space: pre-wrap;
+    text-overflow: ellipsis;
 }
