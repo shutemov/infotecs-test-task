@@ -3,34 +3,53 @@ body {
   margin: 0;
 }
 
-.data-manager {
+.container {
   display: flex;
   width: 100%;
-  border: 1px solid;
   justify-items: space-between; /*check*/
   align-items: center;
 }
 
 .section {
   width: 50%;
-  border: 1px dashed;
 }
 
-.table {
-    table-layout: fixed;
-    width: 100%;
+.users-table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.table__cell-about{
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;  
-    overflow: hidden;
+th,
+td {
+  border: 1px solid #999;
 }
 
-.table__about-content{
-    resize: none;
-    overflow: hidden;
-    white-space: pre-wrap;
-    text-overflow: ellipsis;
+th{
+    cursor: pointer;
+    position: relative;
+}
+
+th::after{
+    content: "^";
+    position: absolute;
+    right: 0;
+}
+
+tbody> tr:hover{
+    background-color: #fff;
+}
+
+.users-table__third-column-body {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.table__about-content {
+  resize: none;
+  overflow: hidden;
+  white-space: pre-wrap;
+  text-overflow: ellipsis;
 }
