@@ -29,6 +29,9 @@ const insertDataIntoTable = (data) => {
 };
 
 const setUpSortingActions = (data) => {
+  const [firstNameCell, lastNameCell, aboutCell, eyeColorCell] =
+    document.querySelectorAll(".users-table>thead>tr>th");
+
 };
 
 const alphabetComparatorByProp = (...props) => {
