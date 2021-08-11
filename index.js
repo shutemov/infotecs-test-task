@@ -47,6 +47,10 @@ const setUpSortingActions = (data) => {
     insertDataIntoTable(sortedData);
   });
 
+  eyeColorCell.addEventListener("click", () => {
+    const sortedData = data.sort(alphabetComparatorByProp("eyeColor"));
+    insertDataIntoTable(sortedData);
+  });
 };
 
 const alphabetComparatorByProp = (...props) => {
