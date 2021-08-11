@@ -32,6 +32,11 @@ const setUpSortingActions = (data) => {
   const [firstNameCell, lastNameCell, aboutCell, eyeColorCell] =
     document.querySelectorAll(".users-table>thead>tr>th");
 
+  firstNameCell.addEventListener("click", () => {
+    const sortedData = data.sort(alphabetComparatorByProp("name", "firstName"));
+    insertDataIntoTable(sortedData);
+  });
+
 };
 
 const alphabetComparatorByProp = (...props) => {
