@@ -21,6 +21,13 @@ const buildContent = (data) => {
 
   return content;
 };
+
+const insertDataIntoTable = (data) => {
+  const tbody = document.querySelector(".users-table>tbody");
+  let content = buildContent(data);
+  tbody.innerHTML = content;
+};
+
 const alphabetComparatorByProp = (...props) => {
   if (props.length > 1) {
     const [propLevel1, propLevel2] = props;
