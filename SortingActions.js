@@ -14,4 +14,13 @@ const firstNameComparatorByAlphabet = (...path) => {
   };
 };
 
+const lastNameComparatorByAlphabet = (...path) => {
+  const [name, lastName] = path;
+  return (a, b) => {
+    if (a[name][lastName] < b[name][lastName]) return -1;
+    if (a[name][lastName] > b[name][lastName]) return 1;
+    return 0;
+  };
+};
+
 };
