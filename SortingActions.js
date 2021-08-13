@@ -32,4 +32,11 @@ const aboutComparatorByAlphabet = (...path) => {
   };
 };
 
+const eyeColorComparatorByAlphabet = (...path) => {
+  const [eyeColor] = path;
+  return (a, b) => {
+    if (a[eyeColor] < b[eyeColor]) return -1;
+    if (a[eyeColor] > b[eyeColor]) return 1;
+    return 0;
+  };
 };
