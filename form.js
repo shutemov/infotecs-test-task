@@ -1,3 +1,12 @@
+export const clearForm = () => {
+  const [firstNameInput, lastNameInput, aboutTextarea, eyeColorInput] =
+    getInputFields();
+
+  firstNameInput.value = "";
+  lastNameInput.value = "";
+  aboutTextarea.value = "";
+  eyeColorInput.value = "";
+};
 
 const getInputFields = () => {
   const nodeListEditFormItems = document.querySelectorAll(".edit-form__item");
