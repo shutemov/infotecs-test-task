@@ -13,12 +13,6 @@ import { insertDataIntoTable } from "./TableManager.js";
 
 
 
-const insertDataIntoTable = (data) => {
-  const tbody = document.querySelector(".users-table>tbody");
-  let content = buildContent(data);
-  tbody.innerHTML = content;
-};
-
 const setUpSortingActions = (data) => {
   const [firstNameCell, lastNameCell, aboutCell, eyeColorCell] =
     document.querySelectorAll(".users-table>thead>tr>th");
