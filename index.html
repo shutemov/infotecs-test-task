@@ -9,7 +9,7 @@
   </head>
   <body>
     <container class="container">
-      <section class="section">
+      <section class="table-section">
         <table class="users-table">
           <caption class="users-table__caption">
             User data
@@ -42,7 +42,38 @@
           </tbody>
         </table>
       </section>
-      <section class="data-manager__editor">2</section>
+      <section class="edit-section">
+        <div class="edit-form">
+          <form>
+            <ul>
+              <ol>
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" />
+              </ol>
+              <ol>
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" />
+              </ol>
+              <ol>
+                <label for="about">About:</label>
+                <textarea id="about"></textarea>
+              </ol>
+              <ol>
+                <label for="eyeColor">Eye Color:</label>
+                <input type="text" id="eyeColor" />
+              </ol>
+              <ol>
+                <button class="edit-form__save-button">Save</button>
+              </ol>
+            </ul>
+          </form>
+        </div>
+        <!-- <form style="width: 100%;">
+          <fieldset>
+            <legend>test</legend>
+          </fieldset>
+        </form> -->
+      </section>
     </container>
   </body>
 
