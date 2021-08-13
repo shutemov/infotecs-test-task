@@ -12,31 +12,7 @@ import { insertDataIntoTable } from "./TableManager.js";
 
 
 
-
-const setUpSortingActions = (data) => {
-  const [firstNameCell, lastNameCell, aboutCell, eyeColorCell] =
-    document.querySelectorAll(".users-table>thead>tr>th");
-
-  firstNameCell.addEventListener("click", () => {
-    const sortedData = data.sort(alphabetComparatorByProp("name", "firstName"));
-    insertDataIntoTable(sortedData);
   });
-
-  lastNameCell.addEventListener("click", () => {
-    const sortedData = data.sort(alphabetComparatorByProp("name", "lastName"));
-    insertDataIntoTable(sortedData);
-  });
-
-  aboutCell.addEventListener("click", () => {
-    const sortedData = data.sort(alphabetComparatorByProp("about"));
-    insertDataIntoTable(sortedData);
-  });
-
-  eyeColorCell.addEventListener("click", () => {
-    const sortedData = data.sort(alphabetComparatorByProp("eyeColor"));
-    insertDataIntoTable(sortedData);
-  });
-
 const alphabetComparatorByProp = (...props) => {
   if (props.length > 1) {
     const [propLevel1, propLevel2] = props;
