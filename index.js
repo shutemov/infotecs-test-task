@@ -13,6 +13,7 @@ const buildContent = (data) => {
     const { id, name, about, eyeColor } = element;
     const { firstName, lastName } = name;
     const thirdColumnStyle = `users-table__third-column-body`;
+import { insertDataIntoTable } from "./TableManager.js";
 
     content += `<tr data-id=${id}>`;
 
