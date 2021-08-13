@@ -39,5 +39,5 @@ const setUpTableHeaderAction = () => {
   });
 };
 
-insertDataIntoTable(users);
-setUpSortingActions(users);
+insertDataIntoTable(users)
+setUpTableHeaderAction();
