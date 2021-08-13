@@ -38,5 +38,18 @@ const setUpTableHeaderAction = () => {
   });
 };
 
-insertDataIntoTable(users)
+const setUpTableRowAction = () => {
+  const tableTBody = document.querySelector(".users-table__tbody");
+
+  tableTBody.addEventListener("click", (event) => {
+    const tableRow = event.target.closest("tr");
+    const userId = tableRow.getAttribute("data-id");
+
+    const user = getUserById(userId);
+    setDataIntoForm(user);
+
+    const storage = window.localStorage;
+    storage.setItem("userId", userId);
+  });
+};
 setUpTableHeaderAction();
