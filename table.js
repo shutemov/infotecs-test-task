@@ -1,5 +1,5 @@
 export const insertDataIntoTable = (data) => {
-  const tbody = document.querySelector(".users-table>tbody");
+  const tbody = document.querySelector(".users-table__tbody");
   let content = buildContent(data);
   tbody.innerHTML = content;
 };
