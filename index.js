@@ -4,13 +4,12 @@ import {
   sortLastNameByAlphabet,
   sortAboutByAlphabet,
   sortEyeColorByAlphabet,
-} from "./SortingActions.js";
+} from "./sortingActions.js";
+import { insertDataIntoTable } from "./table.js";
+import { getUserById, updateUser } from "./dataManager.js";
+import { getDataFromForm, setDataIntoForm, clearForm } from "./form.js";
 
 console.log("Users from index", users);
-
-import { insertDataIntoTable } from "./TableManager.js";
-
-
 
 const setUpTableHeaderAction = () => {
   const tableHeader = document.querySelector(".users-table__header-row");
