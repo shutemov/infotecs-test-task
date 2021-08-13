@@ -22,6 +22,11 @@ export const sortAboutByAlphabet = () => {
   insertDataIntoTable(sortedUsers);
 };
 
+export const sortEyeColorByAlphabet = () => {
+  const sortedUsers = users.sort(eyeColorComparatorByAlphabet("eyeColor"));
+  insertDataIntoTable(sortedUsers);
+};
+
 const firstNameComparatorByAlphabet = (...path) => {
   const [name, firstName] = path;
   return (a, b) => {
