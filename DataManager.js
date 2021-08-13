@@ -10,4 +10,12 @@ export const getUserById = (id) => {
   });
 };
 
+export const updateUser = (user) => {
+  console.log(user);
+  const targetId = user["id"];
+
+  //update user in source
+  users.forEach((user) => {
+    if (user.id == targetId) user = user;
+  });
 };
