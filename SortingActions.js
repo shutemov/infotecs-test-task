@@ -3,6 +3,7 @@ import { insertDataIntoTable } from "./TableManager.js";
 
 const users = getAllUsers();
 console.log("users from data manager", users);
+
 export const sortFirstNameByAlphabet = () => {
   const sortedUsers = users.sort(
     firstNameComparatorByAlphabet("name", "firstName")

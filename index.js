@@ -1,5 +1,10 @@
 import { data as users } from "./data.js";
-console.log(users);
+import {
+  sortFirstNameByAlphabet,
+  sortLastNameByAlphabet,
+  sortAboutByAlphabet,
+  sortEyeColorByAlphabet,
+} from "./SortingActions.js";
 
 const buildContent = (data) => {
   let content = "";
@@ -51,7 +56,6 @@ const setUpSortingActions = (data) => {
     const sortedData = data.sort(alphabetComparatorByProp("eyeColor"));
     insertDataIntoTable(sortedData);
   });
-};
 
 const alphabetComparatorByProp = (...props) => {
   if (props.length > 1) {
