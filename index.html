@@ -23,7 +23,7 @@
             </tr>
           </thead>
           <tbody class="users-table__tbody">
-            <tr class="users-table__body-row-1">
+            <tr class="users-table__body-row">
               <td class="users-table__first-column-body">1</td>
               <td class="users-table__second-column-body">2</td>
               <td class="users-table__third-column-body">
@@ -44,29 +44,31 @@
       </section>
       <section class="edit-section">
         <div class="edit-form">
-          <form>
-            <ul>
-              <ol>
-                <label for="firstName">First Name:</label>
-                <input type="text" id="firstName" />
-              </ol>
-              <ol>
-                <label for="lastName">Last Name:</label>
-                <input type="text" id="lastName" />
-              </ol>
-              <ol>
-                <label for="about">About:</label>
-                <textarea id="about"></textarea>
-              </ol>
-              <ol>
-                <label for="eyeColor">Eye Color:</label>
-                <input type="text" id="eyeColor" />
-              </ol>
-              <ol>
-                <button class="edit-form__save-button">Save</button>
-              </ol>
-            </ul>
-          </form>
+          <div class="edit-form__item">
+            <label for="first-name" class="edit-form__label">First Name:</label>
+            <input
+              type="text"
+              class="edit-form__first-name-input"
+              id="first-name"
+            />
+          </div>
+
+          <div class="edit-form__item">
+            <label for="last-name" class="edit-form__label">Last Name:</label>
+            <input
+              type="text"
+              class="edit-form__last-name-input"
+              id="last-name"
+            />
+          </div>
+
+          <div class="edit-form__item">
+            <label for="about" class="edit-form__label">About:</label>
+            <textarea class="edit-form__about-textarea" id="about"></textarea>
+          </div>
+
+          <div class="edit-form__item">
+            <label for="eyeColor" class="edit-form__label">Eye Color:</label>
             <input
               type="text"
               class="edit-form__eye-color-input"
