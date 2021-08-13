@@ -1,5 +1,5 @@
-import { getAllUsers } from "./DataManager.js";
-import { insertDataIntoTable } from "./TableManager.js";
+import { getAllUsers } from "./dataManager.js";
+import { insertDataIntoTable } from "./table.js";
 
 const users = getAllUsers();
 console.log("users from data manager", users);
