@@ -10,6 +10,11 @@ export const sortFirstNameByAlphabet = () => {
   insertDataIntoTable(sortedUsers);
 };
 
+export const sortLastNameByAlphabet = () => {
+  const sortedUsers = users.sort(
+    lastNameComparatorByAlphabet("name", "lastName")
+  );
+  insertDataIntoTable(sortedUsers);
 };
 const firstNameComparatorByAlphabet = (...path) => {
   const [name, firstName] = path;
