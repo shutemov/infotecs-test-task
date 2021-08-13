@@ -16,6 +16,12 @@ export const sortLastNameByAlphabet = () => {
   );
   insertDataIntoTable(sortedUsers);
 };
+
+export const sortAboutByAlphabet = () => {
+  const sortedUsers = users.sort(aboutComparatorByAlphabet("about"));
+  insertDataIntoTable(sortedUsers);
+};
+
 const firstNameComparatorByAlphabet = (...path) => {
   const [name, firstName] = path;
   return (a, b) => {
