@@ -3,14 +3,20 @@ body {
   margin: 0;
 }
 
+label {
+  display: inline-block;
+  width: 90px;
+  text-align: top;
+}
+
 .container {
   display: flex;
   width: 100%;
   justify-items: space-between; /*check*/
-  align-items: center;
+  /* align-items: center; */
 }
 
-.section {
+.table-section {
   width: 50%;
 }
 
@@ -25,19 +31,19 @@ td {
   border: 1px solid #999;
 }
 
-th{
-    cursor: pointer;
-    position: relative;
+th {
+  cursor: pointer;
+  position: relative;
 }
 
-th::after{
-    content: "^";
-    position: absolute;
-    right: 0;
+th::after {
+  content: "^";
+  position: absolute;
+  right: 0;
 }
 
-tbody> tr:hover{
-    background-color: #fff;
+tbody > tr:hover {
+  background-color: #fff;
 }
 
 .users-table__third-column-body {
