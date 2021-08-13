@@ -1,3 +1,17 @@
+export const setDataIntoForm = (data) => {
+  if (!data) alert("Empty data");
+  const { name, about, eyeColor } = data;
+  const { firstName, lastName } = name;
+
+  const [firstNameInput, lastNameInput, aboutTextarea, eyeColorInput] =
+    getInputFields();
+
+  firstNameInput.value = firstName;
+  lastNameInput.value = lastName;
+  aboutTextarea.value = about;
+  eyeColorInput.value = eyeColor;
+};
+
 export const getDataFromForm = () => {
   const [firstNameInput, lastNameInput, aboutTextarea, eyeColorInput] =
     getInputFields();
