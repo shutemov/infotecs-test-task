@@ -78,4 +78,7 @@ const setUpSaveAction = () => {
   });
 };
 
+insertDataIntoTable(users);
 setUpTableHeaderAction();
+setUpTableRowAction();
+setUpSaveAction();
