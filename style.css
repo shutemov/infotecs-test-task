@@ -59,3 +59,22 @@ tbody > tr:hover {
   white-space: pre-wrap;
   text-overflow: ellipsis;
 }
+
+.edit-section {
+  width: 50%;
+}
+
+.edit-form {
+  width: 100%;
+}
+
+.edit-form__item {
+  width: 100%;
+}
+
+.edit-form__label {
+}
+
+.edit-form__save-button {
+  width: 100%;
+}
