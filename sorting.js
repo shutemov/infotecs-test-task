@@ -4,19 +4,27 @@ const users = getAllUsers();
 console.log("users from sorting", users);
 
 export const sortByFirstName = () => {
-  return users.sort(firstNameComparatorByAlphabet("name", "firstName"));
+  const action = (current, next) =>
+    alphabetComparator(current.name.firstName, next.name.firstName);
+  return users.sort(action);
 };
 
 export const sortByLastName = () => {
-  return users.sort(lastNameComparatorByAlphabet("name", "lastName"));
+  const action = (current, next) =>
+    alphabetComparator(current.name.lastName, next.name.lastName);
+  return users.sort(action);
 };
 
 export const sortByAbout = () => {
-  return users.sort(aboutComparatorByAlphabet("about"));
+  const action = (current, next) =>
+    alphabetComparator(current.about, next.about);
+  return users.sort(action);
 };
 
 export const sortByEyeColor = () => {
-  return users.sort(eyeColorComparatorByAlphabet("eyeColor"));
+  const action = (current, next) =>
+    alphabetComparator(current.eyeColor, next.eyeColor);
+  return users.sort(action);
 };
 
 const alphabetComparator = (a, b) => {
