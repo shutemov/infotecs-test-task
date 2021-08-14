@@ -23,28 +23,27 @@ const setUpTableHeaderAction = (tableClassName) => {
 
   tableHeader.addEventListener("click", (event) => {
     const firstColumnClassName = `${tableClassName}__first-column-head`;
-    const isFirstNameColumn =
+    const isFirstNameColumnClicked =
       event.target.classList.contains(firstColumnClassName);
 
     const secondColumnClassName = `${tableClassName}__second-column-head`;
-    const isLastNameColumn = event.target.classList.contains(
+    const isLastNameColumnClicked = event.target.classList.contains(
       secondColumnClassName
     );
 
     const thirdColumnClassName = `${tableClassName}__third-column-head`;
-    const isAboutColumn = event.target.classList.contains(thirdColumnClassName);
+    const isAboutColumnClicked = event.target.classList.contains(thirdColumnClassName);
 
     const fourthColumnClassName = `${tableClassName}__fourth-column-head`;
-    const isEyeColorColumn = event.target.classList.contains(
+    const isEyeColorColumnClicked = event.target.classList.contains(
       fourthColumnClassName
     );
 
-    if (isFirstNameColumn) {
+    if (isFirstNameColumnClicked)
       updateTableByFirstNameAlphabetSorting(tableClassName);
-    }
-    if (isLastNameColumn) updateTableByLastNameAlphabetSorting(tableClassName);
-    if (isAboutColumn) updateTableByAboutAlphabetSorting(tableClassName);
-    if (isEyeColorColumn) updateTableByEyeColorAlphabetSorting(tableClassName);
+    if (isLastNameColumnClicked) updateTableByLastNameAlphabetSorting(tableClassName);
+    if (isAboutColumnClicked) updateTableByAboutAlphabetSorting(tableClassName);
+    if (isEyeColorColumnClicked) updateTableByEyeColorAlphabetSorting(tableClassName);
   });
 };
 
