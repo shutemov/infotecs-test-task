@@ -6,6 +6,14 @@ import {
 } from "./columnsActions.js";
 import { getUserById } from "./dataManager.js";
 import { setDataIntoForm } from "./form.js";
+
+export const setUpTableActions = (tableClassName) => {
+  if (!tableClassName) throw new Error(`Class name: ${tableClassName} is not defined`);
+
+  setUpTableHeaderAction(tableClassName);
+  setUpTableRowAction(`.${tableClassName}__tbody`);
+};
+
 const setUpTableHeaderAction = (className) => {
   const tableHeader = document.querySelector(`.${className}__header-row`);
 
