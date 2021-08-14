@@ -29,3 +29,10 @@ export const doBack = () => {
   return users;
 };
 
+export const getUsersByCurrentPage = () => {
+  const start = page * numOfEntries;
+  const end = start + numOfEntries;
+  const users = getUsersByInterval(start, end);
+
+  return users;
+};
