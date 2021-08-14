@@ -20,7 +20,7 @@ label {
   width: 50%;
 }
 
-.users-table {
+table[class^="users-table"] {
   table-layout: fixed;
   width: 100%;
   border-collapse: collapse;
@@ -46,7 +46,14 @@ tbody > tr:hover {
   background-color: #fff;
 }
 
-.users-table__third-column-body {
+/* .users-table__third-column-body {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+} */
+
+td[class$="third-column-body"] {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
