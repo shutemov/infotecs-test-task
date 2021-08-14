@@ -1,4 +1,4 @@
-import { getAllUsers } from "./dataManager.js";
+import { getAllUsers, updateAllUsers } from "./data.js";
 import { insertDataIntoTable } from "./table.js";
 import {
   sortByFirstName,

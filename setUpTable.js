@@ -4,11 +4,12 @@ import {
   updateTableByAboutAlphabetSorting,
   updateTableByEyeColorAlphabetSorting,
 } from "./columnsActions.js";
-import { getUserById } from "./dataManager.js";
+import { getUserById } from "./data.js";
 import { setDataIntoForm } from "./form.js";
 
 export const setUpTableActions = (tableClassName) => {
-  if (!tableClassName) throw new Error(`Class name: ${tableClassName} is not defined`);
+  if (!tableClassName)
+    throw new Error(`Class name: ${tableClassName} is not defined`);
 
   setUpTableHeaderAction(tableClassName);
   setUpTableRowAction(`.${tableClassName}__tbody`);

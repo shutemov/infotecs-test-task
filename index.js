@@ -1,8 +1,9 @@
-import { data as users } from "./data.js";
+import { getAllUsers, getUsersByInterval } from "./data.js";
 import { insertDataIntoTable } from "./table.js";
 import { setUpTableActions } from "./setUpTable.js";
 import { setUpFormActions } from "./setUpForm.js";
 
+const users = getAllUsers();
 console.log("Users from index", users);
 
 const tableClassName = "users-table";
@@ -15,3 +16,5 @@ insertDataIntoTable(newTableClassName, users);
 
 const formClassName = "edit-form";
 setUpFormActions(formClassName);
+
+console.log(getUsersByInterval(0, 10));

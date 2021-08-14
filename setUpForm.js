@@ -1,11 +1,12 @@
 import { getDataFromForm, clearForm } from "./form.js";
-import { getUserById, updateUser } from "./dataManager.js";
+import { getAllUsers, getUserById, updateUser } from "./data.js";
+import { insertDataIntoTable } from "./table.js";
 
 export const setUpFormActions = (formClassName) => {
   if (!formClassName)
     throw new Error(`Form class name: ${formClassName} is not defined`);
 
-  setUpFormSaveButtonAction(`.${formClassName}__save-button`);
+  setUpFormSaveButtonAction(`.edit-form__save-button`);
 };
 
 const setUpFormSaveButtonAction = (buttonClassName) => {
@@ -27,9 +28,9 @@ const setUpFormSaveButtonAction = (buttonClassName) => {
     user.eyeColor = eyeColor;
 
     updateUser(user);
-    // insertDataIntoTable(users);
+    const users = getAllUsers();
+    insertDataIntoTable("users-table", users);
     clearForm();
     storage.clear();
   });
 };
-
