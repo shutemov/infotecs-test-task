@@ -15,3 +15,17 @@ export const doNext = () => {
 
   return users;
 };
+
+export const doBack = () => {
+  page--;
+  const start = page * numOfEntries;
+  const end = start + numOfEntries;
+
+  const users = getUsersByInterval(start, end);
+
+  const tableClassName = `users-table`;
+  insertDataIntoTable(tableClassName, users);
+
+  return users;
+};
+
