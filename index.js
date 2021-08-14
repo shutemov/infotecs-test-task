@@ -1,13 +1,7 @@
 import { data as users } from "./data.js";
-import {
-  sortFirstNameByAlphabet,
-  sortLastNameByAlphabet,
-  sortAboutByAlphabet,
-  sortEyeColorByAlphabet,
-} from "./sortingActions.js";
 import { insertDataIntoTable } from "./table.js";
-import { getUserById, updateUser } from "./dataManager.js";
-import { getDataFromForm, setDataIntoForm, clearForm } from "./form.js";
+import { setUpTableActions } from "./setUpTable.js";
+import { setUpFormActions } from "./setUpForm.js";
 
 console.log("Users from index", users);
 
