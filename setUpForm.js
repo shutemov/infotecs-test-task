@@ -1,6 +1,13 @@
 import { getDataFromForm, clearForm } from "./form.js";
 import { getUserById, updateUser } from "./dataManager.js";
 
+export const setUpFormActions = (formClassName) => {
+  if (!formClassName)
+    throw new Error(`Form class name: ${formClassName} is not defined`);
+
+  setUpFormSaveButtonAction(`.${formClassName}__save-button`);
+};
+
 const setUpFormSaveButtonAction = (buttonClassName) => {
   const saveButton = document.querySelector(buttonClassName);
 
