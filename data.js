@@ -1,4 +1,28 @@
 export const data = [
+export const getAllUsers = () => {
+  return users;
+};
+
+export const updateAllUsers = (newUsers) => {
+  users = [...newUsers];
+};
+
+export const updateUser = (user) => {
+  console.log(user);
+  const targetId = user["id"];
+
+  //update user in source
+  users.forEach((user) => {
+    if (user.id == targetId) user = user;
+  });
+};
+
+export const getUserById = (id) => {
+  return users.find((user) => {
+    return user.id === id;
+  });
+};
+
   {
     id: "5c2286fb23e87be312d55d9a",
     name: {
