@@ -18,6 +18,9 @@ export const setUpTableActions = (tableClassName) => {
 const setUpTableHeaderAction = (tableClassName) => {
   const tableHeader = document.querySelector(`.${tableClassName}__header-row`);
 
+  if (!tableHeader)
+    throw new Error(`Table header element not found: ${tableClassName}`);
+
   tableHeader.addEventListener("click", (event) => {
     const firstColumnClassName = `${tableClassName}__first-column-head`;
     const isFirstNameColumn =
