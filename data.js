@@ -22,6 +22,11 @@ export const getUserById = (id) => {
   });
 };
 
+export const getUsersByInterval = (start, end) => {
+  console.log("getUsersByInterval", users.slice(start, end));
+  return users.slice(start, end);
+};
+
 let users = [
   {
     id: "5c2286fb23e87be312d55d9a",
