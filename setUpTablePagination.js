@@ -1,4 +1,11 @@
 import { doBack, doNext, setNumOfEntries } from "./tablePagination.js";
+
+export const setUpPagination = () => {
+  const tableClassName = `users-table`;
+  setNumOfEntries(10);
+  setUpPaginationListener(tableClassName);
+};
+
 const setUpPaginationListener = (targetTableClassname) => {
   const tablePagination = document.querySelector(
     `.${targetTableClassname}-pagination`
