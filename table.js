@@ -1,16 +1,16 @@
-export const insertDataIntoTable = (data) => {
-  const tbody = document.querySelector(".users-table__tbody");
-  let content = buildContent(data);
+export const insertDataIntoTable = (targetClassName, data) => {
+  const tbody = document.querySelector(`.${targetClassName}__tbody`);
+  let content = buildContent(targetClassName, data);
   tbody.innerHTML = content;
 };
 
-const buildContent = (data) => {
+const buildContent = (targetClassName, data) => {
   let content = "";
+  const thirdColumnStyle = `${targetClassName}__third-column-body`;
 
   data.forEach((element) => {
     const { id, name, about, eyeColor } = element;
     const { firstName, lastName } = name;
-    const thirdColumnStyle = `users-table__third-column-body`;
 
     content += `<tr data-id=${id}>`;
 
