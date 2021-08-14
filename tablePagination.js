@@ -36,3 +36,19 @@ export const getUsersByCurrentPage = () => {
 
   return users;
 };
+
+export const setPage = (_page) => {
+  page = _page;
+};
+
+export const setNumOfEntries = (num) => {
+  numOfEntries = num;
+};
+
+export const getPage = () => {
+  page;
+};
+
+export const getNumOfEntries = () => {
+  return numOfEntries;
+};
