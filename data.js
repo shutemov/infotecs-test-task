@@ -1,4 +1,3 @@
-export const data = [
 export const getAllUsers = () => {
   return users;
 };
@@ -23,6 +22,7 @@ export const getUserById = (id) => {
   });
 };
 
+let users = [
   {
     id: "5c2286fb23e87be312d55d9a",
     name: {
