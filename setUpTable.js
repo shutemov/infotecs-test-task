@@ -10,7 +10,14 @@ import { setUpPagination } from "./setUpTablePagination.js";
 import { insertDataIntoTable } from "./table.js";
 import { getUsersByCurrentPage } from "./tablePagination.js";
 
-export const setUpTableActions = (tableClassName) => {
+export const setUpTable = (tableClassName, numOfIntriesOnPage) => {
+  setUpTableListeners(tableClassName);
+  setUpPagination(tableClassName, numOfIntriesOnPage);
+  const users = getUsersByCurrentPage();
+  insertDataIntoTable(tableClassName, users);
+};
+
+const setUpTableListeners = (tableClassName) => {
   if (!tableClassName)
     throw new Error(`Class name: ${tableClassName} is not defined`);
 
