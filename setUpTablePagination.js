@@ -6,11 +6,10 @@ import {
   getCurrentPage,
 } from "./tablePagination.js";
 
-export const setUpPagination = () => {
-  const tableClassName = `users-table`;
-  setNumOfEntries(10);
 import { insertDataIntoTable } from "./table.js";
 import { getNumberOfUser } from "./data.js";
+
+export const setUpPagination = (tableClassName, numOfEntries) => {
   setUpPaginationListener(tableClassName);
 };
 
@@ -29,4 +28,13 @@ const setUpPaginationListener = (targetTableClassname) => {
     if (isNextButton) doNext();
     if (isBackButton) doBack();
   });
+};
+
+const insertCurrentPageIntoPaginationStats = (tableClassName) => {
+  const spanPaginationTotalResults = document.querySelector(
+    `.${tableClassName}-pagination__page`
+  );
+  const currentPage = getCurrentPage();
+
+  spanPaginationTotalResults.innerHTML = currentPage;
 };
