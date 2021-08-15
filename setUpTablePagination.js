@@ -27,6 +27,12 @@ const setUpPaginationListener = (targetTableClassname) => {
     const isNextButtonClicked =
       event.target.classList.contains(nextButtonClassName);
 
+    if (isNextButtonClicked) {
+      const users = getUsersForNextPage();
+      if (users.length === 0) return;
+      insertDataIntoTable(targetTableClassname, users);
+      insertCurrentPageIntoPaginationStats(targetTableClassname);
+    }
   });
 };
 
