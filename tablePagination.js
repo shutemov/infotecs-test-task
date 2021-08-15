@@ -3,14 +3,16 @@ import { getNumberOfUser, getUsersByInterval } from "./data.js";
 let page = 0;
 let numOfEntries = 1;
 
-export const doNext = () => {
+export const getUsersForNextPage = () => {
   page++;
+  console.log(page);
   const start = page * numOfEntries;
   const end = start + numOfEntries;
   const users = getUsersByInterval(start, end);
 
-  const tableClassName = `users-table`;
-  insertDataIntoTable(tableClassName, users);
+  if (users.length === 0) {
+    page--;
+  }
 
   return users;
 };
