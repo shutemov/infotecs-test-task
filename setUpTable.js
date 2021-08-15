@@ -14,11 +14,11 @@ export const setUpTableActions = (tableClassName) => {
   if (!tableClassName)
     throw new Error(`Class name: ${tableClassName} is not defined`);
 
-  setUpTableHeaderAction(tableClassName);
-  setUpTableRowAction(`.${tableClassName}__tbody`);
+  setUpTableHeaderListener(tableClassName);
+  setUpTableRowListener(`.${tableClassName}__tbody`);
 };
 
-const setUpTableHeaderAction = (tableClassName) => {
+const setUpTableHeaderListener = (tableClassName) => {
   const tableHeader = document.querySelector(`.${tableClassName}__header-row`);
 
   if (!tableHeader)
@@ -35,7 +35,8 @@ const setUpTableHeaderAction = (tableClassName) => {
     );
 
     const thirdColumnClassName = `${tableClassName}__third-column-head`;
-    const isAboutColumnClicked = event.target.classList.contains(thirdColumnClassName);
+    const isAboutColumnClicked =
+      event.target.classList.contains(thirdColumnClassName);
 
     const fourthColumnClassName = `${tableClassName}__fourth-column-head`;
     const isEyeColorColumnClicked = event.target.classList.contains(
@@ -44,13 +45,15 @@ const setUpTableHeaderAction = (tableClassName) => {
 
     if (isFirstNameColumnClicked)
       updateTableByFirstNameAlphabetSorting(tableClassName);
-    if (isLastNameColumnClicked) updateTableByLastNameAlphabetSorting(tableClassName);
+    if (isLastNameColumnClicked)
+      updateTableByLastNameAlphabetSorting(tableClassName);
     if (isAboutColumnClicked) updateTableByAboutAlphabetSorting(tableClassName);
-    if (isEyeColorColumnClicked) updateTableByEyeColorAlphabetSorting(tableClassName);
+    if (isEyeColorColumnClicked)
+      updateTableByEyeColorAlphabetSorting(tableClassName);
   });
 };
 
-const setUpTableRowAction = (className) => {
+const setUpTableRowListener = (className) => {
   const tableTBody = document.querySelector(className);
 
   tableTBody.addEventListener("click", (event) => {
