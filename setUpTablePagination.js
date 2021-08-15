@@ -19,7 +19,6 @@ const setUpPaginationListener = (targetTableClassname) => {
   );
 
   tablePagination.addEventListener("click", (event) => {
-    const backButtonClassName = `${targetTableClassname}-pagination__backward`;
     const isBackButton = event.target.classList.contains(backButtonClassName);
 
     const nextButtonClassName = `${targetTableClassname}-pagination__forward`;
@@ -28,6 +27,14 @@ const setUpPaginationListener = (targetTableClassname) => {
     if (isNextButton) doNext();
     if (isBackButton) doBack();
   });
+};
+
+const insertTotalResultIntoPaginationStats = (tableClassName) => {
+  const spanPaginationTotalResults = document.querySelector(
+    `.${tableClassName}-pagination__total-results`
+  );
+  const totalResult = getNumberOfUser();
+  spanPaginationTotalResults.innerHTML = totalResult;
 };
 
 const insertCurrentPageIntoPaginationStats = (tableClassName) => {
