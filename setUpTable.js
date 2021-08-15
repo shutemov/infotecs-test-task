@@ -6,6 +6,9 @@ import {
 } from "./columnsActions.js";
 import { getUserById } from "./data.js";
 import { setDataIntoForm } from "./form.js";
+import { setUpPagination } from "./setUpTablePagination.js";
+import { insertDataIntoTable } from "./table.js";
+import { getUsersByCurrentPage } from "./tablePagination.js";
 
 export const setUpTableActions = (tableClassName) => {
   if (!tableClassName)
