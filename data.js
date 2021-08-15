@@ -27,6 +27,8 @@ export const getUsersByInterval = (start, end) => {
   return users.slice(start, end);
 };
 
+export const getNumberOfUser = () => users.length;
+
 let users = [
   {
     id: "5c2286fb23e87be312d55d9a",
