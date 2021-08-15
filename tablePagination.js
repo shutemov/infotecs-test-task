@@ -17,15 +17,17 @@ export const getUsersForNextPage = () => {
   return users;
 };
 
-export const doBack = () => {
+export const getUsersForPrevPage = () => {
   page--;
+  console.log(page);
   const start = page * numOfEntries;
   const end = start + numOfEntries;
-
   const users = getUsersByInterval(start, end);
 
-  const tableClassName = `users-table`;
-  insertDataIntoTable(tableClassName, users);
+  if (users.length === 0) {
+    page++;
+    return [];
+  }
 
   return users;
 };
