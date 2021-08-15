@@ -37,6 +37,14 @@ const insertTotalResultIntoPaginationStats = (tableClassName) => {
   spanPaginationTotalResults.innerHTML = totalResult;
 };
 
+const insertNumOfPagesIntoPaginationStats = (tableClassName) => {
+  const spanPaginationTotalPages = document.querySelector(
+    `.${tableClassName}-pagination__total-pages`
+  );
+  const totalNumOfPages = getTotalNumOfPages();
+  spanPaginationTotalPages.innerHTML = totalNumOfPages;
+};
+
 const insertCurrentPageIntoPaginationStats = (tableClassName) => {
   const spanPaginationTotalResults = document.querySelector(
     `.${tableClassName}-pagination__page`
