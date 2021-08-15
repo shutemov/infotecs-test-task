@@ -33,6 +33,13 @@ const setUpPaginationListener = (targetTableClassname) => {
       insertDataIntoTable(targetTableClassname, users);
       insertCurrentPageIntoPaginationStats(targetTableClassname);
     }
+
+    if (isBackButtonCLicked) {
+      const users = getUsersForPrevPage();
+      if (users.length === 0) return;
+      insertDataIntoTable(targetTableClassname, users);
+      insertCurrentPageIntoPaginationStats(targetTableClassname);
+    }
   });
 };
 
