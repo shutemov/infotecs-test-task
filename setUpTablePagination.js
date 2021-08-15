@@ -19,13 +19,14 @@ const setUpPaginationListener = (targetTableClassname) => {
   );
 
   tablePagination.addEventListener("click", (event) => {
-    const isBackButton = event.target.classList.contains(backButtonClassName);
+    const backButtonClassName = `${targetTableClassname}-pagination__back-button`;
+    const isBackButtonCLicked =
+      event.target.classList.contains(backButtonClassName);
 
-    const nextButtonClassName = `${targetTableClassname}-pagination__forward`;
-    const isNextButton = event.target.classList.contains(nextButtonClassName);
+    const nextButtonClassName = `${targetTableClassname}-pagination__next-button`;
+    const isNextButtonClicked =
+      event.target.classList.contains(nextButtonClassName);
 
-    if (isNextButton) doNext();
-    if (isBackButton) doBack();
   });
 };
 
