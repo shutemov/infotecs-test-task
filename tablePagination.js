@@ -48,8 +48,8 @@ export const setNumOfEntries = (num) => {
   numOfEntries = num;
 };
 
-export const getPage = () => {
-  page;
+export const getCurrentPage = () => {
+  return page;
 };
 
 export const getNumOfEntries = () => {
