@@ -29,6 +29,12 @@ const setUpPaginationListener = (targetTableClassname) => {
   });
 };
 
+const insertDataIntoPaginationStats = (tableClassName) => {
+  insertTotalResultIntoPaginationStats(tableClassName);
+  insertNumOfPagesIntoPaginationStats(tableClassName);
+  insertCurrentPageIntoPaginationStats(tableClassName);
+};
+
 const insertTotalResultIntoPaginationStats = (tableClassName) => {
   const spanPaginationTotalResults = document.querySelector(
     `.${tableClassName}-pagination__total-results`
