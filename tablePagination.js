@@ -55,3 +55,9 @@ export const getCurrentPage = () => {
 export const getNumOfEntries = () => {
   return numOfEntries;
 };
+
+export const getTotalNumOfPages = () => {
+  const numOfUsers = getNumberOfUser();
+  const totalNumOfPages = numOfUsers / numOfEntries;
+  return totalNumOfPages;
+};
