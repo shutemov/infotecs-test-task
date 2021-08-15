@@ -10,7 +10,9 @@ import { insertDataIntoTable } from "./table.js";
 import { getNumberOfUser } from "./data.js";
 
 export const setUpPagination = (tableClassName, numOfEntries) => {
+  setNumOfEntries(numOfEntries);
   setUpPaginationListener(tableClassName);
+  insertDataIntoPaginationStats(tableClassName);
 };
 
 const setUpPaginationListener = (targetTableClassname) => {
