@@ -13,14 +13,16 @@ const buildContent = (targetClassName, data) => {
   data.forEach((element) => {
     const { id, name, about, eyeColor } = element;
     const { firstName, lastName } = name;
+    const hexCodeForEyeColor = colourNameToHex(eyeColor);
 
     content += `<tr data-id=${id}>`;
 
     content += `<td>${firstName}</td>`;
     content += `<td>${lastName}</td>`;
     content += `<td class=${thirdColumnStyle}> ${about} </td>`;
-    content += `<td>${eyeColor}</td>`;
-
+    content += `<td>`;
+    content += `<input type="color" value=${hexCodeForEyeColor} disabled/>`;
+    content += `</td>`;
     content += `</tr>`;
   });
 
