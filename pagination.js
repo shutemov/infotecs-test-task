@@ -25,3 +25,8 @@ export const getTotalNumOfPages = () => {
   return totalNumOfPages;
 };
 
+export const increasePage = (num) => {
+  page += num ? num : 1;
+  return page;
+};
+
