@@ -28,7 +28,7 @@ const setUpFormSaveButtonAction = (buttonClassName) => {
     user.eyeColor = eyeColor;
 
     updateUser(user);
-    const users = getAllUsers();
+    const users = getUsersByCurrentPage();
     insertDataIntoTable("users-table", users);
     clearForm();
     storage.clear();
