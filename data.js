@@ -1,3 +1,10 @@
+import {
+  decreasePage,
+  getCurrentPage,
+  getNumOfEntries,
+  increasePage,
+} from "./pagination.js";
+
 export const getAllUsers = () => {
   return users;
 };
@@ -23,7 +30,6 @@ export const getUserById = (id) => {
 };
 
 export const getUsersByInterval = (start, end) => {
-  console.log("getUsersByInterval", users.slice(start, end));
   return users.slice(start, end);
 };
 
