@@ -1,4 +1,4 @@
-import { getAllUsers, getUsersByInterval, updateAllUsers } from "./data.js";
+import { getAllUsers, getUsersByCurrentPage, updateAllUsers } from "./data.js";
 import { insertDataIntoTable } from "./table.js";
 import {
   sortByFirstName,
@@ -6,7 +6,6 @@ import {
   sortByAbout,
   sortByEyeColor,
 } from "./sorting.js";
-import { getUsersByCurrentPage } from "./tablePagination.js";
 
 const users = getAllUsers();
 console.log("users from data manager", users);
