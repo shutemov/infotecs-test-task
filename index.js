@@ -1,8 +1,6 @@
-import { insertDataIntoTable } from "./table.js";
 import { setUpTable } from "./setUpTable.js";
 import { setUpFormActions } from "./setUpForm.js";
-import { setUpPagination } from "./setUpTablePagination.js";
-import { getUsersByCurrentPage } from "./tablePagination.js";
+import { getUsersByCurrentPage } from "./data.js";
 
 //test
 // setUpPagination();

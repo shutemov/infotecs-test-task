@@ -1,13 +1,15 @@
 import {
-  getUsersForPrevPage,
-  getUsersForNextPage,
   setNumOfEntries,
   getTotalNumOfPages,
   getCurrentPage,
-} from "./tablePagination.js";
+} from "./pagination.js";
 
 import { insertDataIntoTable } from "./table.js";
-import { getNumberOfUser } from "./data.js";
+import {
+  getNumberOfUser,
+  getUsersForNextPage,
+  getUsersForPrevPage,
+} from "./data.js";
 
 export const setUpPagination = (tableClassName, numOfEntries) => {
   setNumOfEntries(numOfEntries);

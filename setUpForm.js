@@ -1,5 +1,5 @@
 import { getDataFromForm, clearForm } from "./form.js";
-import { getAllUsers, getUserById, updateUser } from "./data.js";
+import { getAllUsers, getUserById, getUsersByCurrentPage, updateUser } from "./data.js";
 import { insertDataIntoTable } from "./table.js";
 
 export const setUpFormActions = (formClassName) => {
