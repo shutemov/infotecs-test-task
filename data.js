@@ -35,6 +35,17 @@ export const getUsersByInterval = (start, end) => {
 
 export const getNumberOfUser = () => users.length;
 
+export const getDistinctEyeColors = () => {
+  const usersEyeColors = users.map((user) => {
+    return user?.eyeColor;
+  });
+
+  const distinctEyecolors = [...new Set(usersEyeColors)];
+
+  console.log("test", distinctEyecolors);
+  return distinctEyecolors;
+};
+
 let users = [
   {
     id: "5c2286fb23e87be312d55d9a",
