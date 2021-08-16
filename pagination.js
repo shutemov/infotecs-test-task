@@ -30,3 +30,7 @@ export const increasePage = (num) => {
   return page;
 };
 
+export const decreasePage = (num) => {
+  page -= num ? num : 1;
+  return page;
+};
