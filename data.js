@@ -57,6 +57,19 @@ export const getUsersForNextPage = () => {
 
   return users;
 };
+
+export const getUsersForPrevPage = () => {
+  decreasePage();
+
+  const [start, end] = getEdgesOfCurrentPageInterval();
+  const users = getUsersByInterval(start, end);
+
+  if (users.length === 0) {
+    increasePage();
+  }
+
+  return users;
+};
 export const getEdgesOfCurrentPageInterval = () => {
   const page = getCurrentPage();
   const numOfEntries = getNumOfEntries();
