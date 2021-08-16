@@ -4,20 +4,6 @@ let page = 0;
 let numOfEntries = 1;
 
 
-export const getUsersForPrevPage = () => {
-  page--;
-  console.log(page);
-  const start = page * numOfEntries;
-  const end = start + numOfEntries;
-  const users = getUsersByInterval(start, end);
-
-  if (users.length === 0) {
-    page++;
-    return [];
-  }
-
-  return users;
-};
 
 export const getUsersByCurrentPage = () => {
   const start = page * numOfEntries;
