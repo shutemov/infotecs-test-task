@@ -70,6 +70,13 @@ export const getUsersForPrevPage = () => {
 
   return users;
 };
+
+export const getUsersByCurrentPage = () => {
+  const [start, end] = getEdgesOfCurrentPageInterval();
+  const users = getUsersByInterval(start, end);
+  return users;
+};
+
 export const getEdgesOfCurrentPageInterval = () => {
   const page = getCurrentPage();
   const numOfEntries = getNumOfEntries();
