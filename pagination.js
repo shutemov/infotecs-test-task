@@ -3,9 +3,6 @@ import { getNumberOfUser, getUsersByInterval } from "./data.js";
 let page = 0;
 let numOfEntries = 1;
 
-
-
-
 export const setPage = (_page) => {
   page = _page;
 };
@@ -27,3 +24,4 @@ export const getTotalNumOfPages = () => {
   const totalNumOfPages = numOfUsers / numOfEntries;
   return totalNumOfPages;
 };
+
