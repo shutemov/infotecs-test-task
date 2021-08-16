@@ -46,6 +46,17 @@ export const getDistinctEyeColors = () => {
   return distinctEyecolors;
 };
 
+export const getUsersForNextPage = () => {
+  increasePage();
+  const [start, end] = getEdgesOfCurrentPageInterval();
+  const users = getUsersByInterval(start, end);
+
+  if (users.length === 0) {
+    decreasePage();
+  }
+
+  return users;
+};
 export const getEdgesOfCurrentPageInterval = () => {
   const page = getCurrentPage();
   const numOfEntries = getNumOfEntries();
