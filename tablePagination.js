@@ -3,19 +3,6 @@ import { getNumberOfUser, getUsersByInterval } from "./data.js";
 let page = 0;
 let numOfEntries = 1;
 
-export const getUsersForNextPage = () => {
-  page++;
-  console.log(page);
-  const start = page * numOfEntries;
-  const end = start + numOfEntries;
-  const users = getUsersByInterval(start, end);
-
-  if (users.length === 0) {
-    page--;
-  }
-
-  return users;
-};
 
 export const getUsersForPrevPage = () => {
   page--;
