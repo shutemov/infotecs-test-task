@@ -5,13 +5,6 @@ let numOfEntries = 1;
 
 
 
-export const getUsersByCurrentPage = () => {
-  const start = page * numOfEntries;
-  const end = start + numOfEntries;
-  const users = getUsersByInterval(start, end);
-
-  return users;
-};
 
 export const setPage = (_page) => {
   page = _page;
