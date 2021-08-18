@@ -1,3 +1,8 @@
+export const colourNameToHex = (colour) => {
+  if (typeof colours[colour.toLowerCase()] === "undefined") return false;
+  return colours[colour.toLowerCase()];
+};
+
 
 const colours = {
   aliceblue: "#f0f8ff",
