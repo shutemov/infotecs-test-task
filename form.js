@@ -37,6 +37,19 @@ export const clearForm = () => {
   eyeColorSelect.value = "";
 };
 
+export const configurateEyeColorSelect = (targetClassName, selectedElement) => {
+  const select = document.querySelector(
+    `.${targetClassName}__eye-color-select`
+  );
+
+  const allColorNames = getColorsNames();
+
+  allColorNames.forEach((color) => {
+    const isSelected = color === selectedElement;
+    insertOption(select, color, isSelected);
+  });
+};
+
 const insertOption = (select, value, isSelected) => {
   const opt = document.createElement("option");
   opt.value = value;
