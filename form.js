@@ -1,3 +1,5 @@
+import { getColorsNames } from "./color.js";
+
 export const setDataIntoForm = (data) => {
   if (!data) alert("Empty data");
   const { name, about, eyeColor } = data;
