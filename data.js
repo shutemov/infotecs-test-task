@@ -9,23 +9,24 @@ export const getAllUsers = () => {
   return users;
 };
 
+export const getUserById = (id) => {
+  return users.find((user) => {
+    return user.id === id;
+  });
+};
+
 export const updateAllUsers = (newUsers) => {
   users = [...newUsers];
 };
 
 export const updateUser = (user) => {
-  console.log(user);
-  const targetId = user["id"];
+  const targetId = user?.id;
 
+  if (!targetId) return;
+  
   //update user in source
   users.forEach((user) => {
     if (user.id == targetId) user = user;
-  });
-};
-
-export const getUserById = (id) => {
-  return users.find((user) => {
-    return user.id === id;
   });
 };
 
