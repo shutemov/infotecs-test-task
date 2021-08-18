@@ -1,4 +1,4 @@
-import { colourNameToHex } from "./colorNameToHexConverter.js";
+import { colourNameToHex } from "./color.js";
 
 export const insertDataIntoTable = (targetClassName, data) => {
   const tbody = document.querySelector(`.${targetClassName}__tbody`);
