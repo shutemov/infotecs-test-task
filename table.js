@@ -8,7 +8,10 @@ export const insertDataIntoTable = (targetClassName, data) => {
 
 const buildContent = (targetClassName, data) => {
   let content = "";
+  const firstColumnStyle = `${targetClassName}__first-column-body`;
+  const secondColumnStyle = `${targetClassName}__second-column-body`;
   const thirdColumnStyle = `${targetClassName}__third-column-body`;
+  const fourthColumnStyle = `${targetClassName}__fourth-column-body`;
 
   data.forEach((element) => {
     const { id, name, about, eyeColor } = element;
@@ -17,10 +20,10 @@ const buildContent = (targetClassName, data) => {
 
     content += `<tr data-id=${id}>`;
 
-    content += `<td>${firstName}</td>`;
-    content += `<td>${lastName}</td>`;
+    content += `<td class=${firstColumnStyle}>${firstName}</td>`;
+    content += `<td class=${secondColumnStyle}>${lastName}</td>`;
     content += `<td class=${thirdColumnStyle}> ${about} </td>`;
-    content += `<td>`;
+    content += `<td class=${fourthColumnStyle}>`;
     content += `<input type="color" value=${hexCodeForEyeColor} disabled/>`;
     content += `</td>`;
     content += `</tr>`;
