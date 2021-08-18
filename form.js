@@ -37,6 +37,16 @@ export const clearForm = () => {
   eyeColorSelect.value = "";
 };
 
+const insertOption = (select, value, isSelected) => {
+  const opt = document.createElement("option");
+  opt.value = value;
+  opt.innerHTML = value;
+
+  if (isSelected) {
+    opt.setAttribute("selected");
+  }
+
+  select.appendChild(opt);
 };
 
 const getInputFields = () => {
