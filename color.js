@@ -7,6 +7,15 @@ export const getColors = () => {
   return colours;
 };
 
+export const getColorsNames = () => {
+  const names = [];
+
+  for (const colorName in colours) {
+    names.push(colorName);
+  }
+
+  return names;
+};
 
 const colours = {
   aliceblue: "#f0f8ff",
