@@ -8,21 +8,49 @@
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <container class="container">
-      <section class="table-section">
-        <div class="users-table-pagination">
-          <div class="users-table-pagintaion__stats">
-            <span>Total Entries:</span>
-            <span class="users-table-pagination__total-results"></span>
-            <br />
-            <span>Total Pages:</span>
-            <span class="users-table-pagination__total-pages"></span>
-          </div>
-          <div>
-            <button class="users-table-pagination__back-button"><</button>
-            <span class="users-table-pagination__page"></span>
-            <button class="users-table-pagination__next-button">></button>
-          </div>
+    <main class="container">
+      <section class="table-section" style="display: flex; flex-direction: column;">
+        <div style="display:flex;">
+          <section class="users-table__column-hider">
+            <fieldset>
+              <legend>Hide</legend>
+              <div>
+                <input type="checkbox" value="first-column" id="first-name"/>
+                <label for="first-name">First name</label>
+              </div>
+              <div>
+                <input type="checkbox" value="second-column" id="last-name"/>
+                <label for="last-name">Last name</label>
+              </div>
+              <div>
+                <input type="checkbox" value="third-column" id="about"/>
+                <label for="about">About</label>
+              </div>
+              <div>
+                <input type="checkbox" value="fourth-column" id="eye-color"/>
+                <label for="eye-color">Eye color</label>
+              </div>
+            </fieldset>
+          </section>
+          <section>
+            <div class="users-table-pagination">
+              <fieldset>
+                <legend>Pagination</legend>
+                <div class="users-table-pagintaion__stats">
+                  <span>Total Entries:</span>
+                  <span class="users-table-pagination__total-results"></span>
+                  <br />
+                  <span>Total Pages:</span>
+                  <span class="users-table-pagination__total-pages"></span>
+                </div>
+                <div>
+                  <button class="users-table-pagination__back-button"><</button>
+                  <span class="users-table-pagination__page"></span>
+                  <button class="users-table-pagination__next-button">></button>
+                </div>
+              </fieldset>
+            </div>
+          </section>
         </div>
         <table class="users-table">
           <caption class="users-table__caption">
@@ -30,7 +58,9 @@
           </caption>
           <thead class="users-table__thead">
             <tr class="users-table__header-row">
-              <th class="users-table__first-column-head">First Name</th>
+              <th class="users-table__first-column-head">
+                First Name
+              </th>
               <th class="users-table__second-column-head">Last Name</th>
               <th class="users-table__third-column-head">About</th>
               <th class="users-table__fourth-column-head">Eye Color</th>
@@ -51,7 +81,7 @@
                 In excepteur adipisicing dolor ea occaecat elit. Irure dolor
                 quis cillum minim voluptate.
               </td>
-              <td>4</td>
+              <td class="users-table__fourth-column-body">4</td>
             </tr>
           </tbody>
         </table>
@@ -132,7 +162,7 @@
           </div>
         </div>
       </section>
-    </container>
+    </main>
   </body>
 
   <script type="module" src="./index.js"></script>
