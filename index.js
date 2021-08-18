@@ -2,6 +2,7 @@ import { setUpTable } from "./setUpTable.js";
 import { setUpFormActions } from "./setUpForm.js";
 import { getUsersByCurrentPage } from "./data.js";
 import { configurateEyeColorSelect } from "./form.js";
+import { hideColumn } from "./columnHider.js";
 
 //test
 // setUpPagination();
@@ -20,4 +21,6 @@ setUpTable(tableClassName, numOfUsersOnPage);
 const formClassName = "edit-form";
 setUpFormActions(formClassName);
 
+//test
 configurateEyeColorSelect("edit-form");
+hideColumn(tableClassName,2)
