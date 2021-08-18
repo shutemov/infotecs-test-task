@@ -3,6 +3,10 @@ export const colourNameToHex = (colour) => {
   return colours[colour.toLowerCase()];
 };
 
+export const getColors = () => {
+  return colours;
+};
+
 
 const colours = {
   aliceblue: "#f0f8ff",
