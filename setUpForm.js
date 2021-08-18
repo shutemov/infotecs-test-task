@@ -21,7 +21,10 @@ const setUpFormSaveButtonAction = (buttonClassName) => {
     const storage = window.localStorage;
     const id = storage.getItem("userId");
 
-    if (!id) alert("user not selected");
+    if (!id) {
+      alert("user not selected");
+      return;
+    }
 
     const user = getUserById(id);
 
