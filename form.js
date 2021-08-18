@@ -15,26 +15,28 @@ export const setDataIntoForm = (data) => {
 };
 
 export const getDataFromForm = () => {
-  const [firstNameInput, lastNameInput, aboutTextarea, eyeColorInput] =
+  const [firstNameInput, lastNameInput, aboutTextarea, eyeColorSelect] =
     getInputFields();
 
   const firstName = firstNameInput.value;
   const lastName = lastNameInput.value;
   const about = aboutTextarea.value;
-  const eyeColor = eyeColorInput.value;
+  const eyeColor = eyeColorSelect.value;
   const data = { firstName, lastName, about, eyeColor };
 
   return data;
 };
 
 export const clearForm = () => {
-  const [firstNameInput, lastNameInput, aboutTextarea, eyeColorInput] =
+  const [firstNameInput, lastNameInput, aboutTextarea, eyeColorSelect] =
     getInputFields();
 
   firstNameInput.value = "";
   lastNameInput.value = "";
   aboutTextarea.value = "";
-  eyeColorInput.value = "";
+  eyeColorSelect.value = "";
+};
+
 };
 
 const getInputFields = () => {
