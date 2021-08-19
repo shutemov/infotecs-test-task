@@ -53,7 +53,7 @@ export const getNumOfEntries = (tableClassName) => {
   return pagination.state.numOfEntries;
 };
 
-export const getTotalNumOfPages = () => {
+export const getTotalNumOfPages = (tableClassName) => {
   const pagination = getPagination(tableClassName);
   const numOfEntries = pagination.state.numOfEntries;
   const numOfUsers = getNumberOfUser();
