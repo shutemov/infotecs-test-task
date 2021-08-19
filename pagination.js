@@ -61,9 +61,8 @@ export const getTotalNumOfPages = (tableClassName) => {
   return totalNumOfPages;
 };
 
-export const increasePage = (num) => {
-  page += num ? num : 1;
-  return page;
+export const increasePage = (tableClassName, num) => {
+  const pagination = getPagination(tableClassName);
   pagination.state.page += num ? num : 1;
   return pagination.state.page;
 };
