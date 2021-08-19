@@ -48,8 +48,7 @@ export const getCurrentPage = (tableClassName) => {
   return pagination.state.page;
 };
 
-export const getNumOfEntries = () => {
-  return numOfEntries;
+export const getNumOfEntries = (tableClassName) => {
   const pagination = getPagination(tableClassName);
   return pagination.state.numOfEntries;
 };
