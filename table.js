@@ -5,6 +5,7 @@ export const insertDataIntoTable = (tableClassName, data) => {
   buildContent(tableClassName, data);
 };
 
+const buildContent = (tableClassName, data) => {
   const tHeadTHsNodes = document.querySelectorAll(
     `.${tableClassName}__header-row > th`
   );
