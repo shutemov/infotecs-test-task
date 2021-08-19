@@ -28,4 +28,12 @@ export const insertDataIntoTable = (tableClassName, data) => {
   const tbody = document.querySelector(`.${tableClassName}__tbody`);
   tbody.innerHTML = "";
 
+  data.forEach((element) => {
+    const {
+      id: _1,
+      name: { firstName: _2, lastName: _3 },
+      about: _4,
+      eyeColor: _5,
+    } = element;
+  });
 };
