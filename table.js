@@ -43,5 +43,9 @@ export const insertDataIntoTable = (tableClassName, data) => {
     const tr = document.createElement("tr");
     tr.setAttribute("data-id", _1);
     tr.setAttribute("class", `${tableClassName}__body-row`);
+
+    for (const prop in orderedData) {
+    }
+
   });
 };
