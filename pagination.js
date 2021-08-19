@@ -28,6 +28,13 @@ export const createPagination = (tableClassName) => {
 
   paginations.push(pagination);
 };
+
+export const getPagination = (tableClassName) => {
+  return paginations.find((pagination) => {
+    return pagination.table === tableClassName;
+  });
+};
+
   const pagination = getPagination(tableClassName);
   pagination.state.page = page;
 };
