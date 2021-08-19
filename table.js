@@ -17,4 +17,11 @@ export const insertDataIntoTable = (tableClassName, data) => {
 
   const hiddenColumns = getHiddenColumns(tableClassName);
 
+  let visibleColumns = [...orderedUniqeColumnClassNames];
+
+  for (let hiddenColumn of hiddenColumns) {
+    visibleColumns = visibleColumns.filter((uniqeColumnClassName) => {
+      return !uniqeColumnClassName.includes(hiddenColumn);
+    });
+  }
 };
