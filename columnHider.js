@@ -8,20 +8,20 @@ export const hideColumn = (tableClassName) => {
     const isHide = event.target.checked;
 
     if (targetColumn === "first-column")
-      switchHide(tableClassName, targetColumn, isHide);
+      switchColumnHiding(tableClassName, targetColumn, isHide);
 
     if (targetColumn === "second-column")
-      switchHide(tableClassName, targetColumn, isHide);
+      switchColumnHiding(tableClassName, targetColumn, isHide);
 
     if (targetColumn === "third-column")
-      switchHide(tableClassName, targetColumn, isHide);
+      switchColumnHiding(tableClassName, targetColumn, isHide);
 
     if (targetColumn === "fourth-column")
-      switchHide(tableClassName, targetColumn, isHide);
+      switchColumnHiding(tableClassName, targetColumn, isHide);
   });
 };
 
-const switchHide = (tableClassName, targetColumn, isHide) => {
+const switchColumnHiding = (tableClassName, targetColumn, isHide) => {
   const candidateToHideTDs = document.querySelectorAll(
     `.${tableClassName}__${targetColumn}-body`
   );
