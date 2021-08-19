@@ -31,20 +31,20 @@ const setUpTableHeaderListener = (tableClassName) => {
     throw new Error(`Table header element not found: ${tableClassName}`);
 
   tableHeader.addEventListener("click", (event) => {
-    const firstColumnClassName = `${tableClassName}__first-column-head`;
+    const firstColumnClassName = `${tableClassName}__1-column-head`;
     const isFirstNameColumnClicked =
       event.target.classList.contains(firstColumnClassName);
 
-    const secondColumnClassName = `${tableClassName}__second-column-head`;
+    const secondColumnClassName = `${tableClassName}__2-column-head`;
     const isLastNameColumnClicked = event.target.classList.contains(
       secondColumnClassName
     );
 
-    const thirdColumnClassName = `${tableClassName}__third-column-head`;
+    const thirdColumnClassName = `${tableClassName}__3-column-head`;
     const isAboutColumnClicked =
       event.target.classList.contains(thirdColumnClassName);
 
-    const fourthColumnClassName = `${tableClassName}__fourth-column-head`;
+    const fourthColumnClassName = `${tableClassName}__4-column-head`;
     const isEyeColorColumnClicked = event.target.classList.contains(
       fourthColumnClassName
     );
