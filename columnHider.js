@@ -42,6 +42,10 @@ export const getHiddenColumns = (tableClassName) => {
   return hiddenColumns;
 };
 
+export const isColumnHidden = (tableClassName, column) => {
+  const { hiddenColumns } = getColumnHider(tableClassName);
+  return hiddenColumns.includes(column);
+};
 
 const getColumnHider = (tableClassName) => {
   return columnHiders.find((columnHider) => {
