@@ -9,6 +9,10 @@ export const insertDataIntoTable = (tableClassName, data) => {
     `.${tableClassName}__header-row > th`
   );
 
+  const theadTHs = Array.from(tHeadTHsNodes);
+
+  const orderedUniqeColumnClassNames = theadTHs.map((tr) => {
+    return tr.classList.value;
   });
 
 };
