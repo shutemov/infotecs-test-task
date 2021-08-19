@@ -28,6 +28,14 @@ export const addHiddenColumn = (tableClassName, column) => {
   columnHider.hiddenColumns.push(column);
 };
 
+export const removeHiddenColumn = (tableClassName, column) => {
+  const columnHider = getColumnHider(tableClassName);
+  
+  const hiddenColumns = columnHider.hiddenColumns.filter((hiddenColumn) => {
+    return hiddenColumn !== column;
+  });
+  columnHider.hiddenColumns = hiddenColumns;
+};
 
 
 
