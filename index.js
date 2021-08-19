@@ -3,14 +3,18 @@ import { setUpFormActions } from "./setUpForm.js";
 import { getUsersByCurrentPage } from "./data.js";
 import { configurateEyeColorSelect } from "./form.js";
 import { hideColumn } from "./columnHider.js";
-
-//test
-// setUpPagination();
-
-const users = getUsersByCurrentPage();
-console.log("Users from index", users);
+import { createPagination } from "./pagination.js";
 
 const tableClassName = "users-table";
+
+//test
+configurateEyeColorSelect("edit-form");
+hideColumn(tableClassName, 2);
+createPagination(tableClassName);
+
+const users = getUsersByCurrentPage(tableClassName);
+console.log("Users from index", users);
+
 const numOfUsersOnPage = 10;
 setUpTable(tableClassName, numOfUsersOnPage);
 
@@ -19,8 +23,4 @@ setUpTable(tableClassName, numOfUsersOnPage);
 // insertDataIntoTable(newTableClassName, users);
 
 const formClassName = "edit-form";
-setUpFormActions(formClassName);
-
-//test
-configurateEyeColorSelect("edit-form");
-hideColumn(tableClassName,2)
+setUpFormActions(formClassName, tableClassName);
