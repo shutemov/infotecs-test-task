@@ -38,8 +38,7 @@ export const setPage = (tableClassName, page) => {
   pagination.state.page = page;
 };
 
-export const setNumOfEntries = (num) => {
-  numOfEntries = num;
+export const setNumOfEntries = (tableClassName, num) => {
   const pagination = getPagination(tableClassName);
   pagination.state.numOfEntries = num;
 };
