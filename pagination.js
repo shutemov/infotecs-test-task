@@ -13,8 +13,8 @@ import { getNumberOfUser } from "./data.js";
 const paginations = [];
 
 export const createPagination = (tableClassName) => {
-  const isExistPagination = getPagination(tableClassName)
-  if(isExistPagination) return
+  const isExistPagination = getPagination(tableClassName);
+  if (isExistPagination) return;
 
   const pagination = {
     table: tableClassName,
