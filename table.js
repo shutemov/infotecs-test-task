@@ -24,4 +24,8 @@ export const insertDataIntoTable = (tableClassName, data) => {
       return !uniqeColumnClassName.includes(hiddenColumn);
     });
   }
+
+  const tbody = document.querySelector(`.${tableClassName}__tbody`);
+  tbody.innerHTML = "";
+
 };
