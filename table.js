@@ -38,5 +38,10 @@ export const insertDataIntoTable = (tableClassName, data) => {
 
     const hexCodeForEyeColor = colourNameToHex(_5);
     const orderedData = [_1, _2, _3, _4, _5];
+
+    //create tr
+    const tr = document.createElement("tr");
+    tr.setAttribute("data-id", _1);
+    tr.setAttribute("class", `${tableClassName}__body-row`);
   });
 };
