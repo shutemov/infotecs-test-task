@@ -1,7 +1,3 @@
-export const hideColumn = (tableClassName) => {
-  const hiderSection = document.querySelector(
-    `.${tableClassName}__column-hider`
-  );
 /*
   {
     table:test, 
@@ -9,23 +5,11 @@ export const hideColumn = (tableClassName) => {
   }
 */
 
-  hiderSection.addEventListener("change", (event) => {
-    const targetColumn = event.target.value;
-    const isHide = event.target.checked;
 const columnHiders = [];
 
-    if (targetColumn === "first-column")
-      switchColumnHiding(tableClassName, targetColumn, isHide);
 
-    if (targetColumn === "second-column")
-      switchColumnHiding(tableClassName, targetColumn, isHide);
 
-    if (targetColumn === "third-column")
-      switchColumnHiding(tableClassName, targetColumn, isHide);
 
-    if (targetColumn === "fourth-column")
-      switchColumnHiding(tableClassName, targetColumn, isHide);
-  });
 };
 
 const switchColumnHiding = (tableClassName, targetColumn, isHide) => {
