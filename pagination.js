@@ -10,8 +10,6 @@ import { getNumberOfUser } from "./data.js";
   }
 */
 
-export const setPage = (_page) => {
-  page = _page;
 const paginations = [];
 
 export const createPagination = (tableClassName) => {
@@ -35,6 +33,7 @@ export const getPagination = (tableClassName) => {
   });
 };
 
+export const setPage = (tableClassName, page) => {
   const pagination = getPagination(tableClassName);
   pagination.state.page = page;
 };
