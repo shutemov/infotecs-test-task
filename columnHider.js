@@ -19,6 +19,13 @@ export const createColumnHider = (tableClassName) => {
   columnHiders.push(columnHider);
 };
 
+export const addHiddenColumn = (tableClassName, column) => {
+  const columnHider = getColumnHider(tableClassName);
+  const hasColumn = columnHider.hiddenColumns.includes(column);
+
+  if (hasColumn) return;
+
+  columnHider.hiddenColumns.push(column);
 };
 
 
