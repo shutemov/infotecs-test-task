@@ -71,5 +71,7 @@ export const insertDataIntoTable = (tableClassName, data) => {
       }
     }
 
+    //insert
+    tbody.appendChild(tr);
   });
 };
