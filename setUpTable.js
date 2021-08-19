@@ -12,7 +12,7 @@ import { insertDataIntoTable } from "./table.js";
 export const setUpTable = (tableClassName, numOfIntriesOnPage) => {
   setUpTableListeners(tableClassName);
   setUpPagination(tableClassName, numOfIntriesOnPage);
-  const users = getUsersByCurrentPage();
+  const users = getUsersByCurrentPage(tableClassName);
   insertDataIntoTable(tableClassName, users);
 };
 

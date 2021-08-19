@@ -12,37 +12,37 @@ import {
 } from "./data.js";
 
 export const setUpPagination = (tableClassName, numOfEntries) => {
-  setNumOfEntries(numOfEntries);
+  setNumOfEntries(tableClassName, numOfEntries);
   setUpPaginationListener(tableClassName);
   insertDataIntoPaginationStats(tableClassName);
 };
 
-const setUpPaginationListener = (targetTableClassname) => {
+const setUpPaginationListener = (tableClassName) => {
   const tablePagination = document.querySelector(
-    `.${targetTableClassname}-pagination`
+    `.${tableClassName}-pagination`
   );
 
   tablePagination.addEventListener("click", (event) => {
-    const backButtonClassName = `${targetTableClassname}-pagination__back-button`;
+    const backButtonClassName = `${tableClassName}-pagination__back-button`;
     const isBackButtonCLicked =
       event.target.classList.contains(backButtonClassName);
 
-    const nextButtonClassName = `${targetTableClassname}-pagination__next-button`;
+    const nextButtonClassName = `${tableClassName}-pagination__next-button`;
     const isNextButtonClicked =
       event.target.classList.contains(nextButtonClassName);
 
     if (isNextButtonClicked) {
-      const users = getUsersForNextPage();
+      const users = getUsersForNextPage(tableClassName);
       if (users.length === 0) return;
-      insertDataIntoTable(targetTableClassname, users);
-      insertCurrentPageIntoPaginationStats(targetTableClassname);
+      insertDataIntoTable(tableClassName, users);
+      insertCurrentPageIntoPaginationStats(tableClassName);
     }
 
     if (isBackButtonCLicked) {
-      const users = getUsersForPrevPage();
+      const users = getUsersForPrevPage(tableClassName);
       if (users.length === 0) return;
-      insertDataIntoTable(targetTableClassname, users);
-      insertCurrentPageIntoPaginationStats(targetTableClassname);
+      insertDataIntoTable(tableClassName, users);
+      insertCurrentPageIntoPaginationStats(tableClassName);
     }
   });
 };
@@ -65,7 +65,7 @@ const insertNumOfPagesIntoPaginationStats = (tableClassName) => {
   const spanPaginationTotalPages = document.querySelector(
     `.${tableClassName}-pagination__total-pages`
   );
-  const totalNumOfPages = getTotalNumOfPages();
+  const totalNumOfPages = getTotalNumOfPages(tableClassName);
   spanPaginationTotalPages.innerHTML = totalNumOfPages;
 };
 
@@ -73,7 +73,7 @@ const insertCurrentPageIntoPaginationStats = (tableClassName) => {
   const spanPaginationTotalResults = document.querySelector(
     `.${tableClassName}-pagination__page`
   );
-  const currentPage = getCurrentPage();
+  const currentPage = getCurrentPage(tableClassName);
 
   spanPaginationTotalResults.innerHTML = currentPage;
 };

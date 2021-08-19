@@ -23,7 +23,7 @@ export const updateUser = (user) => {
   const targetId = user?.id;
 
   if (!targetId) return;
-  
+
   //update user in source
   users.forEach((user) => {
     if (user.id == targetId) user = user;
@@ -43,44 +43,43 @@ export const getDistinctEyeColors = () => {
 
   const distinctEyecolors = [...new Set(usersEyeColors)];
 
-  console.log("test", distinctEyecolors);
   return distinctEyecolors;
 };
 
-export const getUsersForNextPage = () => {
-  increasePage();
-  const [start, end] = getEdgesOfCurrentPageInterval();
+export const getUsersForNextPage = (tableClassName) => {
+  increasePage(tableClassName);
+  const [start, end] = getEdgesOfCurrentPageInterval(tableClassName);
   const users = getUsersByInterval(start, end);
 
   if (users.length === 0) {
-    decreasePage();
+    decreasePage(tableClassName);
   }
 
   return users;
 };
 
-export const getUsersForPrevPage = () => {
-  decreasePage();
+export const getUsersForPrevPage = (tableClassName) => {
+  decreasePage(tableClassName);
 
-  const [start, end] = getEdgesOfCurrentPageInterval();
+  const [start, end] = getEdgesOfCurrentPageInterval(tableClassName);
   const users = getUsersByInterval(start, end);
 
   if (users.length === 0) {
-    increasePage();
+    increasePage(tableClassName);
   }
 
   return users;
 };
 
-export const getUsersByCurrentPage = () => {
-  const [start, end] = getEdgesOfCurrentPageInterval();
+export const getUsersByCurrentPage = (tableClassName) => {
+  const [start, end] = getEdgesOfCurrentPageInterval(tableClassName);
   const users = getUsersByInterval(start, end);
   return users;
 };
 
-export const getEdgesOfCurrentPageInterval = () => {
-  const page = getCurrentPage();
-  const numOfEntries = getNumOfEntries();
+export const getEdgesOfCurrentPageInterval = (tableClassName) => {
+  const page = getCurrentPage(tableClassName);
+  const numOfEntries = getNumOfEntries(tableClassName);
   const start = page * numOfEntries;
   const end = start + numOfEntries;
 

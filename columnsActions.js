@@ -10,34 +10,34 @@ import {
 const users = getAllUsers();
 console.log("users from data manager", users);
 
-export const updateTableByFirstNameAlphabetSorting = (targetTableClassName) => {
+export const updateTableByFirstNameAlphabetSorting = (tableClassName) => {
   const sortedUsers = sortByFirstName();
   updateAllUsers(sortedUsers);
 
-  const currentPageUsers = getUsersByCurrentPage();
-  insertDataIntoTable(targetTableClassName, currentPageUsers);
+  const currentPageUsers = getUsersByCurrentPage(tableClassName);
+  insertDataIntoTable(tableClassName, currentPageUsers);
 };
 
-export const updateTableByLastNameAlphabetSorting = (targetTableClassName) => {
+export const updateTableByLastNameAlphabetSorting = (tableClassName) => {
   const sortedUsers = sortByLastName();
   updateAllUsers(sortedUsers);
 
-  const currentPageUsers = getUsersByCurrentPage();
-  insertDataIntoTable(targetTableClassName, currentPageUsers);
+  const currentPageUsers = getUsersByCurrentPage(tableClassName);
+  insertDataIntoTable(tableClassName, currentPageUsers);
 };
 
-export const updateTableByAboutAlphabetSorting = (targetTableClassName) => {
+export const updateTableByAboutAlphabetSorting = (tableClassName) => {
   const sortedUsers = sortByAbout();
   updateAllUsers(sortedUsers);
 
-  const currentPageUsers = getUsersByCurrentPage();
-  insertDataIntoTable(targetTableClassName, currentPageUsers);
+  const currentPageUsers = getUsersByCurrentPage(tableClassName);
+  insertDataIntoTable(tableClassName, currentPageUsers);
 };
 
-export const updateTableByEyeColorAlphabetSorting = (targetTableClassName) => {
+export const updateTableByEyeColorAlphabetSorting = (tableClassName) => {
   const sortedUsers = sortByEyeColor();
   updateAllUsers(sortedUsers);
 
-  const currentPageUsers = getUsersByCurrentPage();
-  insertDataIntoTable(targetTableClassName, currentPageUsers);
+  const currentPageUsers = getUsersByCurrentPage(tableClassName);
+  insertDataIntoTable(tableClassName, currentPageUsers);
 };

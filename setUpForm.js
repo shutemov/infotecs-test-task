@@ -7,14 +7,14 @@ import {
 } from "./data.js";
 import { insertDataIntoTable } from "./table.js";
 
-export const setUpFormActions = (formClassName) => {
+export const setUpFormActions = (formClassName, tableClassName) => {
   if (!formClassName)
     throw new Error(`Form class name: ${formClassName} is not defined`);
 
-  setUpFormSaveButtonAction(`.edit-form__save-button`);
+  setUpFormSaveButtonAction(`.edit-form__save-button`, tableClassName);
 };
 
-const setUpFormSaveButtonAction = (buttonClassName) => {
+const setUpFormSaveButtonAction = (buttonClassName, tableClassName) => {
   const saveButton = document.querySelector(buttonClassName);
 
   saveButton.addEventListener("click", () => {
@@ -36,7 +36,7 @@ const setUpFormSaveButtonAction = (buttonClassName) => {
     user.eyeColor = eyeColor;
 
     updateUser(user);
-    const users = getUsersByCurrentPage();
+    const users = getUsersByCurrentPage(tableClassName);
     insertDataIntoTable("users-table", users);
     clearForm();
     storage.clear();
