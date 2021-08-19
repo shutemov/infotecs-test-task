@@ -45,6 +45,30 @@ export const insertDataIntoTable = (tableClassName, data) => {
     tr.setAttribute("class", `${tableClassName}__body-row`);
 
     for (const prop in orderedData) {
+      for (const visibleColumn of visibleColumns) {
+        const isPropForVisibleColumn = visibleColumn.includes(prop);
+        if (isPropForVisibleColumn) {
+          //create td
+          const td = document.createElement("td");
+          td.setAttribute("class", `${tableClassName}__${prop}-column-body`);
+          td.innerHTML = orderedData[prop];
+
+          if (prop === "4") {
+            //create input
+            const colorInput = document.createElement("input");
+            colorInput.setAttribute("type", "color");
+            colorInput.setAttribute("value", hexCodeForEyeColor);
+            colorInput.setAttribute("disabled", "");
+
+            //insert
+            td.innerHTML = "";
+            td.appendChild(colorInput);
+          }
+
+          //insert
+          tr.appendChild(td);
+        }
+      }
     }
 
   });
