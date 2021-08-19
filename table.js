@@ -15,4 +15,6 @@ export const insertDataIntoTable = (tableClassName, data) => {
     return tr.classList.value;
   });
 
+  const hiddenColumns = getHiddenColumns(tableClassName);
+
 };
