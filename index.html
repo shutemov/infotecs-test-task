@@ -7,12 +7,12 @@
     <title>Infotecs test task</title>
     <link rel="stylesheet" href="/style.css" />
   </head>
-  <body>
+  <body class="body">
     <main class="container">
-      <section class="table-section" style="display: flex; flex-direction: column;">
-        <div style="display:flex;">
+      <section class="table-section">
+        <container class="table-section__container">
           <section class="users-table__column-hider">
-            <fieldset>
+            <fieldset class="users-table__column-hider-fieldset">
               <legend>Hide</legend>
               <div>
                 <input type="checkbox" value="_1" id="first-name"/>
@@ -32,29 +32,26 @@
               </div>
             </fieldset>
           </section>
-          <section>
-            <div class="users-table-pagination">
-              <fieldset>
-                <legend>Pagination</legend>
-                <div class="users-table-pagintaion__stats">
-                  <span>Total Entries:</span>
-                  <span class="users-table-pagination__total-results"></span>
-                  <br />
-                  <span>Total Pages:</span>
-                  <span class="users-table-pagination__total-pages"></span>
+          <section class="users-table__pagination">
+              <fieldset class="users-table__pagination-fieldset">
+                <legend class="users-table__pagination-legend">Pagination</legend>
+                <div class="users-table__pagintaion-stats">
+                  <span>Entries:</span>
+                  <b class="users-table-pagination__total-results"></b>
+                  <span>Pages:</span>
+                  <b class="users-table-pagination__total-pages"></b>
                 </div>
-                <div>
-                  <button class="users-table-pagination__back-button"><</button>
+                <div class="users-table-pagination__button-group">
+                  <button class="users-table-pagination__back-button">⬅️</button>
                   <span class="users-table-pagination__page"></span>
-                  <button class="users-table-pagination__next-button">></button>
+                  <button class="users-table-pagination__next-button">➡️</button>
                 </div>
               </fieldset>
-            </div>
           </section>
-        </div>
+        </container>
         <table class="users-table">
           <caption class="users-table__caption">
-            User data
+            Users
           </caption>
           <thead class="users-table__thead">
             <tr class="users-table__header-row">
@@ -67,7 +64,7 @@
             </tr>
           </thead>
           <tbody class="users-table__tbody">
-            <tr class="users-table__body-row">
+            <!-- <tr class="users-table__body-row">
               <td class="users-table__1-column-body">1</td>
               <td class="users-table__2-column-body">2</td>
               <td class="users-table__3-column-body">
@@ -82,7 +79,7 @@
                 quis cillum minim voluptate.
               </td>
               <td class="users-table__4-column-body">4</td>
-            </tr>
+            </tr> -->
           </tbody>
         </table>
 
