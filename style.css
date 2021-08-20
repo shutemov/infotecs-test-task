@@ -1,5 +1,6 @@
-body {
-  background-color: beige;
+.body {
+  background-color: #e7e0c9;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
 }
 
@@ -12,18 +13,88 @@ label {
 .container {
   display: flex;
   width: 100%;
-  justify-items: space-between; /*check*/
-  /* align-items: center; */
+  justify-items: space-between;
 }
 
 .table-section {
+  display: flex;
+  flex-direction: column;
   width: 50%;
+  padding: 10px;
+}
+
+.table-section__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.users-table__column-hider {
+  width: 50%;
+  font-size: 1.2em;
+}
+
+.users-table__pagination {
+  width: 50%;
+  font-size: 1.2em;
+}
+
+.users-table__column-hider-fieldset {
+  height: 100%;
+}
+
+.users-table__pagination-fieldset {
+  height: 100%;
+}
+
+.users-table__column-hider-fieldset {
+}
+
+.users-table-pagination__button-group {
+  display: flex;
+  justify-content: space-around;
+  /* border: 1px solid; */
+  margin-top: 30px;
+}
+
+.users-table-pagination__back-button,
+.users-table-pagination__next-button {
+  font-size: 1.3em;
+  background: none;
+  border: none;
+}
+
+.users-table-pagination__page {
+  font-size: 15pt;
 }
 
 table[class^="users-table"] {
   table-layout: fixed;
   width: 100%;
+  margin-top: 2%;
   border-collapse: collapse;
+}
+
+table[class^="users-table"] > thead > tr > th {
+  font-weight: bold;
+  padding: 5px;
+  background: #c1cfc0;
+  border: 1px solid #dddddd;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+table[class^="users-table"] > caption {
+  font-size: 1.5em;
+  text-align: left;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 10px;
+}
+
+table[class^="users-table"] > tbody > tr:nth-child(odd) {
+  background-color: #a1ada0;
+}
+
+table[class^="users-table"] > tbody > tr:nth-child(even) {
+  background-color: #c1cfc0;
 }
 
 th,
@@ -31,33 +102,30 @@ td {
   border: 1px solid #999;
 }
 
-th {
+table[class^="users-table"] > tbody > tr:hover {
+  background-color: #6b7aa1;
+}
+
+table[class^="users-table"] > thead > tr > th {
   cursor: pointer;
   position: relative;
 }
 
-th::after {
-  content: "^";
-  position: absolute;
-  right: 0;
+td[class$="1-column-body"] {
 }
 
-tbody > tr:hover {
-  background-color: #fff;
+td[class$="2-column-body"] {
 }
-
-/* .users-table__third-column-body {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-} */
 
 td[class$="3-column-body"] {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+td[class$="4-column-body"] {
+  text-align: center;
 }
 
 .table__about-content {
@@ -68,15 +136,43 @@ td[class$="3-column-body"] {
 }
 
 .edit-section {
+  display: flex;
+  justify-content: center;
   width: 50%;
+  padding: 10px;
 }
 
-.edit-form {
-  width: 100%;
+.users-table__edit-form {
+  width: 50%;
+  padding: 10px;
 }
 
 .edit-form__item {
+  /* width: 50%; */
+  margin-top: 10px;
+}
+
+.edit-form__item > label {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.edit-form__item > input,
+textarea,
+select {
+  box-sizing: border-box;
   width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.1em;
+  white-space: pre-line;
+}
+
+.edit-form__item > textarea {
+  height: auto;
+}
+
+.edit-form__item > input,
+select {
+  height: 35px;
 }
 
 .edit-form__label {
