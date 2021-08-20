@@ -60,15 +60,16 @@ const setUpTableHeaderListener = (tableClassName) => {
   });
 };
 
-const setUpTableRowListener = (className) => {
-  const tableTBody = document.querySelector(className);
+const setUpTableRowListener = (tableClassName) => {
+  const tableTBody = document.querySelector(`.${tableClassName}__tbody`);
 
   tableTBody.addEventListener("click", (event) => {
     const tableRow = event.target.closest("tr");
     const userId = tableRow.getAttribute("data-id");
 
     const user = getUserById(userId);
-    setDataIntoForm(user);
+    setDataIntoForm(tableClassName, user);
+    setDataIntoFormFields(tableClassName, user);
 
     const storage = window.localStorage;
     storage.setItem("userId", userId);
