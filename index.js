@@ -7,11 +7,10 @@ import { createColumnHiderModel } from "./columnHider.js";
 
 const tableClassName = "users-table";
 
-//test
-configurateEyeColorSelect("edit-form");
-hideColumn(tableClassName);
-createPagination(tableClassName);
-createColumnHider(tableClassName);
+//create models
+createPaginationModel(tableClassName);
+createColumnHiderModel(tableClassName);
+createFormModel(tableClassName);
 
 const users = getUsersByCurrentPage(tableClassName);
 console.log("Users from index", users);
