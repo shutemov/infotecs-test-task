@@ -12,7 +12,7 @@ import { getNumberOfUser } from "./data.js";
 
 const paginations = [];
 
-export const createPagination = (tableClassName) => {
+export const createPaginationModel = (tableClassName) => {
   const isExistPagination = getPagination(tableClassName);
   if (isExistPagination) return;
 
