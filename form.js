@@ -4,9 +4,21 @@ export const setDataIntoForm = (data) => {
   if (!data) alert("Empty data");
   const { name, about, eyeColor } = data;
   const { firstName, lastName } = name;
+/*
+  {
+    table:test, 
+    data:{
+      firstName:"",
+      lastName:"",
+      about:"",
+      eyeColor:""
+    }
+  }
+*/
 
   const [firstNameInput, lastNameInput, aboutTextarea, eyeColorInput] =
     getInputFields();
+const forms = [];
 
   firstNameInput.value = firstName;
   lastNameInput.value = lastName;
