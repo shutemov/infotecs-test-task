@@ -22,7 +22,7 @@ const setUpTableListeners = (tableClassName) => {
     throw new Error(`Class name: ${tableClassName} is not defined`);
 
   setUpTableHeaderListener(tableClassName);
-  setUpTableRowListener(`.${tableClassName}__tbody`);
+  setUpTableRowListener(tableClassName);
 };
 
 const setUpTableHeaderListener = (tableClassName) => {
