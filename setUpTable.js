@@ -10,7 +10,7 @@ import { setDataIntoFormFields } from "./setUpForm.js";
 import { setUpPagination } from "./setUpTablePagination.js";
 import { insertDataIntoTable } from "./table.js";
 
-export const setUpTable = (tableClassName, numOfIntriesOnPage) => {
+export const initTable = (tableClassName, numOfIntriesOnPage) => {
   setUpTableListeners(tableClassName);
   setUpPagination(tableClassName, numOfIntriesOnPage);
   const users = getUsersByCurrentPage(tableClassName);
