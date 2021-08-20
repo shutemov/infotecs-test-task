@@ -1,10 +1,9 @@
 import { setUpTable } from "./setUpTable.js";
-import { setUpFormActions } from "./setUpForm.js";
-import { getUsersByCurrentPage } from "./data.js";
-import { configurateEyeColorSelect } from "./form.js";
-import { createPagination } from "./pagination.js";
-import { hideColumn } from "./setUpColumnHider.js";
-import { createColumnHider } from "./columnHider.js";
+import { initForm } from "./setUpForm.js";
+import { createFormModel } from "./form.js";
+import { createPaginationModel } from "./pagination.js";
+import { setUpColumnHiderEvents } from "./setUpColumnHider.js";
+import { createColumnHiderModel } from "./columnHider.js";
 
 const tableClassName = "users-table";
 
