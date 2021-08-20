@@ -3,7 +3,10 @@ import { getUserById, getUsersByCurrentPage, updateUser } from "./data.js";
 import { insertDataIntoTable } from "./table.js";
 import { getColorsNames } from "./color.js";
 
-export const setUpFormActions = (formClassName, tableClassName) => {
+export const initForm = (tableClassName, formClassName) => {
+  setUpFormEvents(tableClassName, formClassName);
+  initEyeColorSelect(tableClassName, formClassName);
+};
 
 const setUpFormEvents = (tableClassName, formClassName) => {
   if (!formClassName)
