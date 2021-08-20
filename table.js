@@ -31,30 +31,30 @@ const buildContent = (tableClassName, data) => {
 
   data.forEach((element) => {
     const {
-      id: _1,
-      name: { firstName: _2, lastName: _3 },
-      about: _4,
-      eyeColor: _5,
+      id: _0,
+      name: { firstName: _1, lastName: _2 },
+      about: _3,
+      eyeColor: _4,
     } = element;
 
-    const hexCodeForEyeColor = colourNameToHex(_5);
-    const orderedData = [_1, _2, _3, _4, _5];
+    const hexCodeForEyeColor = colourNameToHex(_4);
+    const orderedRenamedPropByObjectInData = { _0, _1, _2, _3, _4 };
 
     //create tr
     const tr = document.createElement("tr");
-    tr.setAttribute("data-id", _1);
+    tr.setAttribute("data-id", _0);
     tr.setAttribute("class", `${tableClassName}__body-row`);
 
-    for (const prop in orderedData) {
+    for (const prop in orderedRenamedPropByObjectInData) {
       for (const visibleColumn of visibleColumns) {
         const isPropForVisibleColumn = visibleColumn.includes(prop);
         if (isPropForVisibleColumn) {
           //create td
           const td = document.createElement("td");
           td.setAttribute("class", `${tableClassName}__${prop}-column-body`);
-          td.innerHTML = orderedData[prop];
+          td.innerHTML = orderedRenamedPropByObjectInData[prop];
 
-          if (prop === "4") {
+          if (prop === "_4") {
             //create input
             const colorInput = document.createElement("input");
             colorInput.setAttribute("type", "color");
