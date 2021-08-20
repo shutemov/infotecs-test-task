@@ -1,9 +1,3 @@
-import { getColorsNames } from "./color.js";
-
-export const setDataIntoForm = (data) => {
-  if (!data) alert("Empty data");
-  const { name, about, eyeColor } = data;
-  const { firstName, lastName } = name;
 /*
   {
     table:test, 
@@ -16,73 +10,52 @@ export const setDataIntoForm = (data) => {
   }
 */
 
-  const [firstNameInput, lastNameInput, aboutTextarea, eyeColorInput] =
-    getInputFields();
 const forms = [];
 
-  firstNameInput.value = firstName;
-  lastNameInput.value = lastName;
-  aboutTextarea.value = about;
-  eyeColorInput.value = eyeColor;
+export const createFormModel = (tableClassName) => {
+  const isExistPagination = getForm(tableClassName);
+  if (isExistPagination) return;
+
+  const form = {
+    table: tableClassName,
+    data: {
+      firstName: "",
+      lastName: "",
+      about: "",
+      eyeColor: "",
+    },
+  };
+
+  forms.push(form);
 };
 
-export const getDataFromForm = () => {
-  const [firstNameInput, lastNameInput, aboutTextarea, eyeColorSelect] =
-    getInputFields();
+export const setDataIntoForm = (tableClassName, data) => {
+  if (!data) alert("Empty data");
+  const {
+    name: { firstName, lastName },
+    about,
+    eyeColor,
+  } = data;
 
-  const firstName = firstNameInput.value;
-  const lastName = lastNameInput.value;
-  const about = aboutTextarea.value;
-  const eyeColor = eyeColorSelect.value;
-  const data = { firstName, lastName, about, eyeColor };
+  const form = getForm(tableClassName);
+  form.data = { firstName, lastName, about, eyeColor };
+};
 
+export const getDataFromForm = (tableClassName) => {
+  const { data } = getForm(tableClassName);
   return data;
 };
 
-export const clearForm = () => {
-  const [firstNameInput, lastNameInput, aboutTextarea, eyeColorSelect] =
-    getInputFields();
-
-  firstNameInput.value = "";
-  lastNameInput.value = "";
-  aboutTextarea.value = "";
-  eyeColorSelect.value = "";
-};
-
-export const configurateEyeColorSelect = (targetClassName, selectedElement) => {
-  const select = document.querySelector(
-    `.${targetClassName}__eye-color-select`
-  );
-
-  const allColorNames = getColorsNames();
-
-  allColorNames.forEach((color) => {
-    const isSelected = color === selectedElement;
-    insertOption(select, color, isSelected);
+export const getForm = (tableClassName) => {
+  return forms.find((form) => {
+    return form.table === tableClassName;
   });
 };
 
-const insertOption = (select, value, isSelected) => {
-  const opt = document.createElement("option");
-  opt.value = value;
-  opt.innerHTML = value;
+export const clearFormData = (tableClassName) => {
+  const { data } = getForm(tableClassName);
 
-  if (isSelected) {
-    opt.setAttribute("selected");
+  for (const prop in data) {
+    data[prop] = "";
   }
-
-  select.appendChild(opt);
-};
-
-/*
-  Каждый 3 элемент item'a содержит значение
-*/
-const getInputFields = () => {
-  const nodeListEditFormItems = document.querySelectorAll(".edit-form__item");
-
-  const formInputFields = Array.from(nodeListEditFormItems).map((item) => {
-    return item.childNodes[3];
-  });
-
-  return formInputFields;
 };
