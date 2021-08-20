@@ -6,6 +6,7 @@ import {
 } from "./columnsActions.js";
 import { getUserById, getUsersByCurrentPage } from "./data.js";
 import { setDataIntoForm } from "./form.js";
+import { setDataIntoFormFields } from "./setUpForm.js";
 import { setUpPagination } from "./setUpTablePagination.js";
 import { insertDataIntoTable } from "./table.js";
 
