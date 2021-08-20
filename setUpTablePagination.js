@@ -75,5 +75,5 @@ const insertCurrentPageIntoPaginationStats = (tableClassName) => {
   );
   const currentPage = getCurrentPage(tableClassName);
 
-  spanPaginationTotalResults.innerHTML = currentPage;
+  spanPaginationTotalResults.innerHTML = currentPage + 1; //with 0 
 };
