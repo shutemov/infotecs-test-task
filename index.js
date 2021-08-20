@@ -12,17 +12,16 @@ createPaginationModel(tableClassName);
 createColumnHiderModel(tableClassName);
 createFormModel(tableClassName);
 
-const users = getUsersByCurrentPage(tableClassName);
-console.log("Users from index", users);
 
+//init's
 const numOfUsersOnPage = 10;
 setUpTable(tableClassName, numOfUsersOnPage);
+
+const formClassName = "edit-form";
+setUpColumnHiderEvents(tableClassName);
+
+initForm(tableClassName, formClassName);
 
 // const newTableClassName = "users-table-1";
 // setUpTableActions(newTableClassName);
 // insertDataIntoTable(newTableClassName, users);
-
-const formClassName = "edit-form";
-setUpFormActions(formClassName, tableClassName);
-
-
