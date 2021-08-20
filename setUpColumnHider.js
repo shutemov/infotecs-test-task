@@ -2,7 +2,7 @@ import { addHiddenColumn, removeHiddenColumn } from "./columnHider.js";
 import { getUsersByCurrentPage } from "./data.js";
 import { insertDataIntoTable } from "./table.js";
 
-export const hideColumn = (tableClassName) => {
+export const setUpColumnHiderEvents = (tableClassName) => {
   const hiderSection = document.querySelector(
     `.${tableClassName}__column-hider`
   );
