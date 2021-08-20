@@ -7,7 +7,7 @@
 
 const columnHiders = [];
 
-export const createColumnHider = (tableClassName) => {
+export const createColumnHiderModel = (tableClassName) => {
   const isExistColumnHider = getColumnHider(tableClassName);
   if (isExistColumnHider) return;
 
