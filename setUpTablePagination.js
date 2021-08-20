@@ -19,7 +19,7 @@ export const setUpPagination = (tableClassName, numOfEntries) => {
 
 const setUpPaginationListener = (tableClassName) => {
   const tablePagination = document.querySelector(
-    `.${tableClassName}-pagination`
+    `.${tableClassName}__pagination`
   );
 
   tablePagination.addEventListener("click", (event) => {
