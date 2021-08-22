@@ -16,6 +16,15 @@ export const initForm = (tableClassName, formClassName) => {
 
 const setUpFormEvents = (tableClassName, formClassName) => {
   if (!formClassName)
+const initSelectors = (tableClassName) => {
+  editForm = `.${tableClassName}-edit-form`;
+  editFormItem = `${editForm}__item`;
+  editFormSaveButton = `${editForm}__save-button`;
+  editFormEyeColorSelect = `${editForm}__select`;
+};
+
+const setUpFormEvents = (tableClassName) => {
+  if (!editForm)
     throw new Error(`Form class name: ${formClassName} is not defined`);
 
   const saveButtonClassName = `edit-form__save-button`;
