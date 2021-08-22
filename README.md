@@ -1,6 +1,6 @@
 # InfoTeCS-test-task
 Тестовое задание на осеннюю стажировку InfoTeCS, позиция - Разработчик JS.  
-Ссылка на рабочий макет: [link]
+Ссылка на рабочий макет: https://shutemov.github.io/infotecs-test-task/
 
 ### Основные цели
 
