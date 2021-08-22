@@ -51,7 +51,7 @@ const buildContent = (tableClassName, data) => {
         if (isPropForVisibleColumn) {
           //create td
           const td = document.createElement("td");
-          td.setAttribute("class", `${tableClassName}__${prop}-column-body`);
+          td.setAttribute("class", `${tableClassName}_${prop}-column-body`);
           td.innerHTML = orderedRenamedPropByObjectInData[prop];
 
           if (prop === "_4") {
