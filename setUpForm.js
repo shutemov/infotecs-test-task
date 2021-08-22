@@ -3,6 +3,12 @@ import { getUserById, getUsersByCurrentPage, updateUser } from "./data.js";
 import { insertDataIntoTable } from "./table.js";
 import { getColorsNames } from "./color.js";
 
+// selectors
+let editForm = undefined;
+let editFormItem = undefined;
+let editFormSaveButton = undefined;
+let editFormEyeColorSelect = undefined;
+
 export const initForm = (tableClassName, formClassName) => {
   setUpFormEvents(tableClassName, formClassName);
   initEyeColorSelect(tableClassName, formClassName);
@@ -104,10 +110,8 @@ const getInputFields = (tableClassName) => {
   return formInputFields;
 };
 
-export const initEyeColorSelect = (tableClassName, formClassName) => {
-  const select = document.querySelector(
-    `.${tableClassName}__edit-form > .edit-form__item > .${formClassName}__eye-color-select`
-  );
+export const initEyeColorSelect = () => {
+  const select = document.querySelector(editFormEyeColorSelect);
   const allColorNames = getColorsNames();
 
   allColorNames.forEach((color) => {
