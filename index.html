@@ -13,40 +13,68 @@
         <container class="table-section__container">
           <section class="users-table__column-hider">
             <fieldset class="users-table__column-hider-fieldset">
-              <legend>Hide</legend>
-              <div>
-                <input type="checkbox" value="_1" id="first-name"/>
-                <label for="first-name">First name</label>
+              <legend class="users-table-column-hider__legeng">Hide</legend>
+              <div class="users-table-column-hider__item">
+                <input
+                  class="users-table-column-hider__input"
+                  type="checkbox"
+                  value="_1"
+                  id="first-name"
+                />
+                <label class="users-table-column-hider__label" for="first-name">
+                  First name</label
+                >
               </div>
-              <div>
-                <input type="checkbox" value="_2" id="last-name"/>
-                <label for="last-name">Last name</label>
+              <div class="users-table-column-hider__item">
+                <input
+                  class="users-table-column-hider__input"
+                  type="checkbox"
+                  value="_2"
+                  id="last-name"
+                />
+                <label class="users-table-column-hider__label" for="last-name"
+                  >Last name</label
+                >
               </div>
-              <div>
-                <input type="checkbox" value="_3" id="about"/>
-                <label for="about">About</label>
+              <div class="users-table-column-hider__item">
+                <input
+                  class="users-table-column-hider__input"
+                  type="checkbox"
+                  value="_3"
+                  id="about"
+                />
+                <label class="users-table-column-hider__label" for="about"
+                  >About</label
+                >
               </div>
-              <div>
-                <input type="checkbox" value="_4" id="eye-color"/>
-                <label for="eye-color">Eye color</label>
+              <div class="users-table-column-hider__item">
+                <input
+                  class="users-table-column-hider__input"
+                  type="checkbox"
+                  value="_4"
+                  id="eye-color"
+                />
+                <label class="users-table-column-hider__label" for="eye-color"
+                  >Eye color</label
+                >
               </div>
             </fieldset>
           </section>
           <section class="users-table__pagination">
-              <fieldset class="users-table__pagination-fieldset">
-                <legend class="users-table__pagination-legend">Pagination</legend>
-                <div class="users-table__pagintaion-stats">
-                  <span>Entries:</span>
-                  <b class="users-table-pagination__total-results"></b>
-                  <span>Pages:</span>
-                  <b class="users-table-pagination__total-pages"></b>
-                </div>
-                <div class="users-table-pagination__button-group">
-                  <button class="users-table-pagination__back-button">⬅️</button>
-                  <span class="users-table-pagination__page"></span>
-                  <button class="users-table-pagination__next-button">➡️</button>
-                </div>
-              </fieldset>
+            <fieldset class="users-table__pagination-fieldset">
+              <legend class="users-table__pagination-legend">Pagination</legend>
+              <div class="users-table__pagintaion-stats">
+                <span class="users-table__pagintaion-entries">Entries:</span>
+                <b class="users-table-pagination__total-results"></b>
+                <span class="users-table__pagintaion-pages">Pages:</span>
+                <b class="users-table-pagination__total-pages"></b>
+              </div>
+              <div class="users-table-pagination__button-group">
+                <button class="users-table-pagination__back-button">⬅️</button>
+                <span class="users-table-pagination__page"></span>
+                <button class="users-table-pagination__next-button">➡️</button>
+              </div>
+            </fieldset>
           </section>
         </container>
         <table class="users-table">
@@ -55,9 +83,7 @@
           </caption>
           <thead class="users-table__thead">
             <tr class="users-table__header-row">
-              <th class="users-table__1-column-head">
-                First Name
-              </th>
+              <th class="users-table__1-column-head">First Name</th>
               <th class="users-table__2-column-head">Last Name</th>
               <th class="users-table__3-column-head">About</th>
               <th class="users-table__4-column-head">Eye Color</th>
@@ -82,80 +108,55 @@
             </tr> -->
           </tbody>
         </table>
-
-        <!-- <table class="users-table-1">
-          <caption class="users-table-1__caption">
-            User data
-          </caption>
-          <thead class="users-table-1__thead">
-            <tr class="users-table-1__header-row">
-              <th class="users-table-1__first-column-head">First Name</th>
-              <th class="users-table-1__second-column-head">Last Name</th>
-              <th class="users-table-1__third-column-head">About</th>
-              <th class="users-table-1__fourth-column-head">Eye Color</th>
-            </tr>
-          </thead>
-          <tbody class="users-table-1__tbody">
-            <tr class="users-table-1__body-row">
-              <td class="users-table-1__first-column-body">1</td>
-              <td class="users-table-1__second-column-body">2</td>
-              <td class="users-table-1__third-column-body">
-                Qui aliquip esse occaecat voluptate cillum laborum do
-                adipisicing ea. Lorem dolor pariatur exercitation et Lorem
-                voluptate reprehenderit. Culpa nisi sunt laborum culpa eu et
-                nulla aute aliqua commodo cupidatat culpa. Eu laboris dolor enim
-                officia mollit labore proident proident tempor ex minim magna
-                dolor. Ipsum cillum officia irure amet enim voluptate consequat
-                deserunt laborum nulla excepteur pariatur voluptate incididunt.
-                In excepteur adipisicing dolor ea occaecat elit. Irure dolor
-                quis cillum minim voluptate.
-              </td>
-              <td>4</td>
-            </tr>
-            <tr class="users-table-1__body-row">
-              <td class="users-table-1__first-column-body">10</td>
-              <td class="users-table-1__second-column-body">2</td>
-              <td class="users-table-1__third-column-body">aaa</td>
-              <td>4</td>
-            </tr>
-          </tbody>
-        </table> -->
       </section>
       <section class="edit-section">
-        <div class="users-table__edit-form">
-          <div class="edit-form__item">
-            <label for="first-name" class="edit-form__label">First Name:</label>
+        <div class="users-table-edit-form">
+          <div class="users-table-edit-form__item">
+            <label class="users-table-edit-form__label" for="first-name"
+              >First Name:</label
+            >
             <input
               type="text"
-              class="edit-form__first-name-input"
+              class="users-table-edit-form__input"
               id="first-name"
             />
           </div>
-
-          <div class="edit-form__item">
-            <label for="edit-form__last-name-input" class="edit-form__label">Last Name:</label>
+          <div class="users-table-edit-form__item">
+            <label
+              class="users-table-edit-form__label"
+              for="edit-form__last-name-input"
+              >Last Name:</label
+            >
             <input
               type="text"
-              class="edit-form__last-name-input"
+              class="users-table-edit-form__input"
               id="edit-form__last-name-input"
             />
           </div>
-
-          <div class="edit-form__item">
-            <label for="edit-form__about-textarea" class="edit-form__label">About:</label>
-            <textarea class="edit-form__about-textarea" id="edit-form__about-textarea"></textarea>
+          <div class="users-table-edit-form__item">
+            <label
+              class="users-table-edit-form__label"
+              for="edit-form__about-textarea"
+              >About:</label
+            >
+            <textarea
+              class="users-table-edit-form__textarea"
+              id="edit-form__about-textarea"
+            ></textarea>
           </div>
-
-          <div class="edit-form__item">
-            <label for="edit-form__eye-color-select"">Eye Color:</label>
+          <div class="users-table-edit-form__item">
+            <label
+              class="users-table-edit-form__label"
+              for="edit-form__eye-color-select"
+              >Eye Color:</label
+            >
             <select
-              class="edit-form__eye-color-select"
+              class="users-table-edit-form__select"
               id="edit-form__eye-color-select"
             ></select>
           </div>
-
-          <div class="edit-form__item">
-            <button class="edit-form__save-button">Save</button>
+          <div class="users-table-edit-form__item">
+            <button class="users-table-edit-form__save-button">Save</button>
           </div>
         </div>
       </section>
