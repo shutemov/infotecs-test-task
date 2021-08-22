@@ -10,12 +10,11 @@ let editFormSaveButton = undefined;
 let editFormEyeColorSelect = undefined;
 
 export const initForm = (tableClassName, formClassName) => {
+  initSelectors(tableClassName);
   setUpFormEvents(tableClassName, formClassName);
   initEyeColorSelect(tableClassName, formClassName);
 };
 
-const setUpFormEvents = (tableClassName, formClassName) => {
-  if (!formClassName)
 const initSelectors = (tableClassName) => {
   editForm = `.${tableClassName}-edit-form`;
   editFormItem = `${editForm}__item`;
@@ -27,14 +26,11 @@ const setUpFormEvents = (tableClassName) => {
   if (!editForm)
     throw new Error(`Form class name: ${formClassName} is not defined`);
 
-  const saveButtonClassName = `edit-form__save-button`;
-  setUpSaveButtonEvent(tableClassName, saveButtonClassName);
+  setUpSaveButtonEvent(tableClassName);
 };
 
-const setUpSaveButtonEvent = (tableClassName, buttonClassName) => {
-  const saveButton = document.querySelector(
-    `.${tableClassName}__edit-form > .edit-form__item > .${buttonClassName}`
-  );
+const setUpSaveButtonEvent = (tableClassName) => {
+  const saveButton = document.querySelector(editFormSaveButton);
 
   saveButton.addEventListener("click", () => {
     const storage = window.localStorage;
@@ -107,10 +103,8 @@ export const setDataIntoFormFields = (tableClassName) => {
 /*
   Каждый 3 элемент item'a содержит значение
 */
-const getInputFields = (tableClassName) => {
-  const nodeListEditFormItems = document.querySelectorAll(
-    `.${tableClassName}__edit-form > .edit-form__item`
-  );
+const getInputFields = () => {
+  const nodeListEditFormItems = document.querySelectorAll(editFormItem);
 
   const formInputFields = Array.from(nodeListEditFormItems).map((item) => {
     return item.childNodes[3];
