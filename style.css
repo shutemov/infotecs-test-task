@@ -243,3 +243,38 @@
 .users-table-edit-form__textarea {
   resize: vertical;
 }
+
+@media (max-width: 991px) {
+  .container {
+    flex-wrap: wrap-reverse;
+  }
+
+  .table-section {
+    width: 100%;
+  }
+
+  .edit-section {
+    width: 100%;
+  }
+
+  .users-table {
+    margin-top: 30px;
+  }
+
+  .users-table-edit-form {
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .users-table__column-hider {
+    width: 40%;
+  }
+
+  .users-table__pagination {
+    width: 60%;
+  }
+
+  .users-table__pagintaion-stats {
+    justify-content: space-between;
+  }
+}
