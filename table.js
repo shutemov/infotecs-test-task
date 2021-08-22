@@ -57,6 +57,7 @@ const buildContent = (tableClassName, data) => {
           if (prop === "_4") {
             //create input
             const colorInput = document.createElement("input");
+            colorInput.setAttribute("class", "eye-color-input");
             colorInput.setAttribute("type", "color");
             colorInput.setAttribute("value", hexCodeForEyeColor);
             colorInput.setAttribute("disabled", "");
