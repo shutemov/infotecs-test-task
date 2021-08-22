@@ -110,7 +110,8 @@
         </table>
       </section>
       <section class="edit-section">
-        <div class="users-table-edit-form">
+        <form class="users-table-edit-form" onsubmit="return false">
+          <h1 class="users-table-edit-form__caption">Edit form ✏️</h1>
           <div class="users-table-edit-form__item">
             <label class="users-table-edit-form__label" for="first-name"
               >First Name:</label
@@ -141,6 +142,7 @@
             >
             <textarea
               class="users-table-edit-form__textarea"
+              rows="6"
               id="edit-form__about-textarea"
             ></textarea>
           </div>
@@ -158,7 +160,7 @@
           <div class="users-table-edit-form__item">
             <button class="users-table-edit-form__save-button">Save</button>
           </div>
-        </div>
+        </form>
       </section>
     </main>
   </body>
