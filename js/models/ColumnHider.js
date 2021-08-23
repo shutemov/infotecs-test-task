@@ -6,7 +6,7 @@ export class ColumnHider {
 
   addHiddenColumn(column) {
     const hasColumn = this.hiddenColumns.includes(column);
-    if (hasColumn) return;
+    if (hasColumn) return false;
 
     this.hiddenColumns.push(column);
   }
