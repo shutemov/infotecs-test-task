@@ -133,11 +133,11 @@
 
 .users-table__1-column-body,
 .users-table__2-column-body {
-  padding: 5px;
+  padding-left: 10px;
 }
 
 .users-table__3-column-body {
-  padding: 5px;
+  padding-left: 10px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -145,7 +145,7 @@
 }
 
 .users-table__4-column-body {
-  padding: 5px;
+  padding-left: 10px;
   text-align: center;
   width: auto;
 }
@@ -176,8 +176,8 @@
   border-radius: 10px;
   background-color: #5bbdf9;
   color: #f2f3f4;
-  box-shadow: 5px 5px 0px 0px #8dcdf8, 10px 10px 0px 0px #42a8fc,
-    15px 15px 0px 0px #137cc7, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 5px 5px 0px 0px #42a8fc, 10px 10px 0px 0px #137cc7,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
 .users-table-edit-form__caption {
