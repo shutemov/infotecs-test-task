@@ -43,6 +43,13 @@ const setUpSaveButtonEvent = (tableClassName) => {
     user.about = about;
     user.eyeColor = eyeColor;
 
+    if (!firstName || !lastName) {
+      alert(
+        "The minimum data for the user must contain the first and last name"
+      );
+      return;
+    }
+
     updateUser(user);
 
     const users = getUsersByCurrentPage(tableClassName);
