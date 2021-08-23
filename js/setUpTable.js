@@ -7,7 +7,6 @@ import {
 import { getUserById, getUsersByCurrentPage } from "./data.js";
 import { setDataIntoForm } from "./form.js";
 import { setDataIntoFormFields } from "./setUpForm.js";
-import { initPagination } from "./setUpTablePagination.js";
 import { insertDataIntoTable } from "./table.js";
 
 /**

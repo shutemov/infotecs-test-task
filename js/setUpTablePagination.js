@@ -11,7 +11,7 @@ import {
 } from "./data.js";
 
 /**
- * модуль конфигуратор пагинаций
+ * Модуль конфигуратор пагинаций
  */
 
 export const initPagination = (tableClassName, numOfEntries) => {

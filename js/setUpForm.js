@@ -4,7 +4,7 @@ import { insertDataIntoTable } from "./table.js";
 import { getColorsNames } from "./color.js";
 
 /**
- * модуль конфигуратор форм
+ * Модуль конфигуратор форм
  */
 
 export const initForm = (tableClassName) => {

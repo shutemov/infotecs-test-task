@@ -3,7 +3,7 @@ import { getUsersByCurrentPage } from "./data.js";
 import { insertDataIntoTable } from "./table.js";
 
 /**
- * модуль конфигуратор скрывателя колонок
+ * Модуль конфигуратор скрывателя колонок
  */
 
 export const initColumnHider = (tableClassName) => {

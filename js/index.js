@@ -7,7 +7,7 @@ import { createColumnHiderModel } from "./columnHider.js";
 import { initPagination } from "./setUpTablePagination.js";
 
 /**
- * 1st table
+ * 1-ая таблица 
  */
 
 const tableClassName = "users-table";
@@ -28,7 +28,7 @@ initForm(tableClassName, formClassName);
 initTable(tableClassName);
 
 /*
-    2nd table
+    2-ая таблица 
 */
 
 // const tableClassName1 = "users-table-1";

@@ -2,9 +2,12 @@ import { colourNameToHex } from "./color.js";
 import { getHiddenColumns } from "./columnHider.js";
 
 /**
- * модуль работы с содержимым таблицы
+ * Модуль работы с содержимым таблицы
  */
 
+/**
+ * Функция вставки данных в таблицу в зависимости от видимых столбцов
+ */
 export const insertDataIntoTable = (tableClassName, data) => {
   const tHeadTHsNodes = document.querySelectorAll(
     `.${tableClassName}__header-row > th`
@@ -33,7 +36,7 @@ export const insertDataIntoTable = (tableClassName, data) => {
   tbody.innerHTML = "";
 
   data.forEach((element) => {
-    /* размечаем, полученные, данные для дальнейшего
+    /* размечаем полученные данные для дальнейшего
     соотнесения с видимыми столбцами таблицы: _1 - первый столбец и т.д.*/
     const {
       id: _0,
