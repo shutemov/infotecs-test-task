@@ -9,6 +9,7 @@
   </head>
   <body class="body">
     <main class="container">
+      <!-- 1st table -->
       <section class="table-section">
         <container class="table-section__container">
           <section class="users-table__column-hider">
@@ -77,6 +78,7 @@
             </fieldset>
           </section>
         </container>
+        <!-- 1st table -->
         <table class="users-table">
           <caption class="users-table__caption">
             Users
@@ -90,6 +92,8 @@
             </tr>
           </thead>
           <tbody class="users-table__tbody">
+            <!-- template of content -->
+
             <!-- <tr class="users-table__body-row">
               <td class="users-table__1-column-body">1</td>
               <td class="users-table__2-column-body">2</td>
@@ -163,6 +167,146 @@
         </form>
       </section>
     </main>
+
+    <!-- 2nd table -->
+    
+    <!-- <section>
+      <table class="users-table-1">
+        <caption class="users-table-1__caption">
+          Users
+        </caption>
+        <thead class="users-table-1__thead">
+          <tr class="users-table-1__header-row">
+            <th class="users-table-1__1-column-head">First Name</th>
+            <th class="users-table-1__2-column-head">Last Name</th>
+            <th class="users-table-1__3-column-head">About</th>
+            <th class="users-table-1__4-column-head">Eye Color</th>
+          </tr>
+        </thead>
+        <tbody class="users-table-1__tbody"></tbody>
+      </table>
+
+      <section class="users-table-1__pagination">
+        <fieldset class="users-table-1__pagination-fieldset">
+          <legend class="users-table-1__pagination-legend">Pagination</legend>
+          <div class="users-table-1__pagintaion-stats">
+            <span class="users-table-1__pagintaion-entries">Entries:</span>
+            <b class="users-table-1-pagination__total-results"></b>
+            <span class="users-table-1__pagintaion-pages">Pages:</span>
+            <b class="users-table-1-pagination__total-pages"></b>
+          </div>
+          <div class="users-table-1-pagination__button-group">
+            <button class="users-table-1-pagination__back-button">⬅️</button>
+            <span class="users-table-1-pagination__page"></span>
+            <button class="users-table-1-pagination__next-button">➡️</button>
+          </div>
+        </fieldset>
+      </section>
+
+      <section class="users-table-1__column-hider">
+        <fieldset class="users-table-1__column-hider-fieldset">
+          <legend class="users-table-1-column-hider__legeng">Hide</legend>
+          <div class="users-table-1-column-hider__item">
+            <input
+              class="users-table-1-column-hider__input"
+              type="checkbox"
+              value="_1"
+              id="first-name"
+            />
+            <label class="users-table-1-column-hider__label" for="first-name">
+              First name</label
+            >
+          </div>
+          <div class="users-table-1-column-hider__item">
+            <input
+              class="users-table-1-column-hider__input"
+              type="checkbox"
+              value="_2"
+              id="last-name"
+            />
+            <label class="users-table-1-column-hider__label" for="last-name"
+              >Last name</label
+            >
+          </div>
+          <div class="users-table-1-column-hider__item">
+            <input
+              class="users-table-1-column-hider__input"
+              type="checkbox"
+              value="_3"
+              id="about"
+            />
+            <label class="users-table-1-column-hider__label" for="about"
+              >About</label
+            >
+          </div>
+          <div class="users-table-1-column-hider__item">
+            <input
+              class="users-table-1-column-hider__input"
+              type="checkbox"
+              value="_4"
+              id="eye-color"
+            />
+            <label class="users-table-1-column-hider__label" for="eye-color"
+              >Eye color</label
+            >
+          </div>
+        </fieldset>
+      </section>
+
+      <section class="edit-section">
+        <form class="users-table-1-edit-form" onsubmit="return false">
+          <h1 class="users-table-1-edit-form__caption">Edit form ✏️</h1>
+          <div class="users-table-1-edit-form__item">
+            <label class="users-table-1-edit-form__label" for="first-name"
+              >First Name:</label
+            >
+            <input
+              type="text"
+              class="users-table-1-edit-form__input"
+              id="first-name"
+            />
+          </div>
+          <div class="users-table-1-edit-form__item">
+            <label
+              class="users-table-1-edit-form__label"
+              for="edit-form__last-name-input"
+              >Last Name:</label
+            >
+            <input
+              type="text"
+              class="users-table-1-edit-form__input"
+              id="edit-form__last-name-input"
+            />
+          </div>
+          <div class="users-table-1-edit-form__item">
+            <label
+              class="users-table-1-edit-form__label"
+              for="edit-form__about-textarea"
+              >About:</label
+            >
+            <textarea
+              class="users-table-1-edit-form__textarea"
+              rows="6"
+              id="edit-form__about-textarea"
+            ></textarea>
+          </div>
+          <div class="users-table-1-edit-form__item">
+            <label
+              class="users-table-1-edit-form__label"
+              for="edit-form__eye-color-select"
+              >Eye Color:</label
+            >
+            <select
+              class="users-table-1-edit-form__select"
+              id="edit-form__eye-color-select"
+            ></select>
+          </div>
+          <div class="users-table-1-edit-form__item">
+            <button class="users-table-1-edit-form__save-button">Save</button>
+          </div>
+        </form>
+      </section>
+    </section> -->
   </body>
 
   <script type="module" src="./js/index.js"></script>
