@@ -1,14 +1,4 @@
-/*
-  {
-    table:test, 
-    data:{
-      firstName:"",
-      lastName:"",
-      about:"",
-      eyeColor:""
-    }
-  }
-*/
+import { Form } from "./models/Form.js";
 
 const forms = [];
 
@@ -16,15 +6,7 @@ export const createFormModel = (tableClassName) => {
   const isExistPagination = getForm(tableClassName);
   if (isExistPagination) return;
 
-  const form = {
-    table: tableClassName,
-    data: {
-      firstName: "",
-      lastName: "",
-      about: "",
-      eyeColor: "",
-    },
-  };
+  const form = new Form(tableClassName);
 
   forms.push(form);
 };
@@ -38,17 +20,20 @@ export const setDataIntoForm = (tableClassName, data) => {
   } = data;
 
   const form = getForm(tableClassName);
-  form.data = { firstName, lastName, about, eyeColor };
+  const extractedData = { firstName, lastName, about, eyeColor };
+  form.setData(extractedData);
 };
 
 export const getDataFromForm = (tableClassName) => {
-  const { data } = getForm(tableClassName);
+  const form = getForm(tableClassName);
+  const data = form.getData();
   return data;
 };
 
 export const getForm = (tableClassName) => {
   return forms.find((form) => {
-    return form.table === tableClassName;
+    const targetTableClassName = form.getTable();
+    return targetTableClassName === tableClassName;
   });
 };
 
