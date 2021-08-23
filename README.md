@@ -1,7 +1,11 @@
 # InfoTeCS-test-task
-Тестовое задание на осеннюю стажировку InfoTeCS, позиция - Разработчик JS.  
-Ссылка на рабочий макет: https://shutemov.github.io/infotecs-test-task/
+Тестовое задание на осеннюю стажировку в InfoTeCS, позиция - Разработчик JS.  
 
+Ссылка на рабочий макет: https://shutemov.github.io/infotecs-test-task/  
+
+Для запуска на локале потребуется сервер (из-за модулей и CORS): [неплохой гайд](https://medium.com/ghostcoder/using-es6-modules-in-the-browser-5dce9ca9e911).  
+
+Также можно использовать расширение  [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) для VSCode.
 ### Основные цели
 
 - [x] На основе имеющегося массива данных, создать таблицу шириной 50% от экрана;
