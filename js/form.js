@@ -1,5 +1,9 @@
 import { Form } from "./models/Form.js";
 
+/**
+ * Модуль хранит объявленные формы и предоставлет api для работы с ними
+ */
+
 const forms = [];
 
 export const createFormModel = (tableClassName) => {

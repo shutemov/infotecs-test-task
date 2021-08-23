@@ -5,6 +5,10 @@ import {
   increasePage,
 } from "./pagination.js";
 
+/**
+ * Модуль предоставляет api работы с данными
+ */
+
 export const getAllUsers = () => {
   return users;
 };

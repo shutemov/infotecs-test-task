@@ -41,15 +41,11 @@
 
 .users-table-column-hider__label {
   display: inline-block;
-  /* width: 90px; */
   text-align: top;
 }
 
-/* pagination */
-
 .users-table__pagination {
   width: 25%;
-  /* height: 100%; */
   font-size: 1.2em;
 }
 
@@ -127,11 +123,7 @@
   border-right: none;
 }
 
-.users-table__body-row:nth-child(odd) {
-  background-color: #ffffff;
-}
-
-.users-table__body-row:nth-child(even) {
+.users-table__body-row {
   background-color: #ffffff;
 }
 
@@ -181,7 +173,6 @@
   width: 50%;
   height: auto;
   padding: 10px;
-  /* border: 1px solid; */
   border-radius: 10px;
   background-color: #5bbdf9;
   color: #f2f3f4;

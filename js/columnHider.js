@@ -1,18 +1,15 @@
-/*
-  {
-    table:test, 
-    hiddenColumns:[]
-  }
-*/
-
 import { ColumnHider } from "./models/ColumnHider.js";
+
+/**
+ * Модуль хранит объявленные скрыватели колонок и предоставлет api для работы с ними
+ */
 
 const columnHiders = [];
 
 export const createColumnHiderModel = (tableClassName) => {
   const isExistColumnHider = getColumnHider(tableClassName);
   if (isExistColumnHider) return;
-  
+
   const columnHider = new ColumnHider(tableClassName);
 
   columnHiders.push(columnHider);

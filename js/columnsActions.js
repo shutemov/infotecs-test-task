@@ -1,4 +1,4 @@
-import { getAllUsers, getUsersByCurrentPage, updateAllUsers } from "./data.js";
+import { getUsersByCurrentPage, updateAllUsers } from "./data.js";
 import { insertDataIntoTable } from "./table.js";
 import {
   sortByFirstName,
@@ -6,6 +6,10 @@ import {
   sortByAbout,
   sortByEyeColor,
 } from "./sorting.js";
+
+/**
+ * Модуль экспортирует экшены для эвентов ячеек thead
+ */
 
 export const updateTableByFirstNameAlphabetSorting = (tableClassName) => {
   const sortedUsers = sortByFirstName();

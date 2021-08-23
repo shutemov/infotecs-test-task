@@ -10,6 +10,10 @@ import { setDataIntoFormFields } from "./setUpForm.js";
 import { setUpPagination } from "./setUpTablePagination.js";
 import { insertDataIntoTable } from "./table.js";
 
+/**
+ * модуль конфигуратор таблиц
+ */
+
 export const initTable = (tableClassName, numOfIntriesOnPage) => {
   setUpTableListeners(tableClassName);
   setUpPagination(tableClassName, numOfIntriesOnPage);

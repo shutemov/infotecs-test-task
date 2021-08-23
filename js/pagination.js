@@ -1,15 +1,9 @@
 import { getNumberOfUser } from "./data.js";
 import { Pagination } from "./models/Pagination.js";
 
-/*
-  {
-    table:test, 
-    state:{
-      page:0,
-      numOfEntries:1
-    }
-  }
-*/
+/**
+ * Модуль хранит объявленные пагинации и предоставлет api для работы с ними
+ */
 
 const paginations = [];
 

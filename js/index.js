@@ -5,18 +5,18 @@ import { createPaginationModel } from "./pagination.js";
 import { initColumnHider } from "./setUpColumnHider.js";
 import { createColumnHiderModel } from "./columnHider.js";
 
-/*
-    1st table
-*/
+/**
+ * 1st table
+ */
 
 const tableClassName = "users-table";
 
-//create models
+//Создаем модели
 createPaginationModel(tableClassName);
 createColumnHiderModel(tableClassName);
 createFormModel(tableClassName);
 
-//init's
+//Инициализируем
 const numOfUsersOnPage = 10;
 initTable(tableClassName, numOfUsersOnPage);
 

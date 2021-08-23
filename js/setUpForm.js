@@ -3,7 +3,11 @@ import { getUserById, getUsersByCurrentPage, updateUser } from "./data.js";
 import { insertDataIntoTable } from "./table.js";
 import { getColorsNames } from "./color.js";
 
-export const initForm = (tableClassName, formClassName) => {
+/**
+ * модуль конфигуратор форм
+ */
+
+export const initForm = (tableClassName) => {
   setUpFormEvents(tableClassName);
   initEyeColorSelect(tableClassName);
 };
@@ -44,7 +48,7 @@ const setUpSaveButtonEvent = (tableClassName) => {
     const users = getUsersByCurrentPage(tableClassName);
     insertDataIntoTable(tableClassName, users);
 
-    //clear form after using
+    //Очищаем модель и представлени формы
     clearFormData(tableClassName);
     clearFormFields(tableClassName);
     storage.clear();
@@ -113,11 +117,9 @@ export const initEyeColorSelect = (tableClassName) => {
 };
 
 const insertOption = (select, value) => {
-  //create
   const option = document.createElement("option");
   option.value = value;
   option.innerHTML = value;
 
-  //insert
   select.appendChild(option);
 };

@@ -1,5 +1,9 @@
 import { getAllUsers } from "./data.js";
 
+/**
+ * модуль экспортирующий отсортированные данные
+ */
+
 const users = getAllUsers();
 
 export const sortByFirstName = () => {

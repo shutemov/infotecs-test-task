@@ -10,6 +10,10 @@ import {
   getUsersForPrevPage,
 } from "./data.js";
 
+/**
+ * модуль конфигуратор пагинаций
+ */
+
 export const setUpPagination = (tableClassName, numOfEntries) => {
   setNumOfEntries(tableClassName, numOfEntries);
   setUpPaginationListener(tableClassName);
