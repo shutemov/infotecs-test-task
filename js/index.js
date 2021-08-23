@@ -4,6 +4,7 @@ import { createFormModel } from "./form.js";
 import { createPaginationModel } from "./pagination.js";
 import { initColumnHider } from "./setUpColumnHider.js";
 import { createColumnHiderModel } from "./columnHider.js";
+import { initPagination } from "./setUpTablePagination.js";
 
 /**
  * 1st table
@@ -11,34 +12,39 @@ import { createColumnHiderModel } from "./columnHider.js";
 
 const tableClassName = "users-table";
 
-//Создаем модели
 createPaginationModel(tableClassName);
 createColumnHiderModel(tableClassName);
 createFormModel(tableClassName);
 
 //Инициализируем
 const numOfUsersOnPage = 10;
-initTable(tableClassName, numOfUsersOnPage);
-
-initColumnHider(tableClassName);
 const formClassName = "edit-form";
+
+initPagination(tableClassName, numOfUsersOnPage);
+initColumnHider(tableClassName);
 initForm(tableClassName, formClassName);
+
+// в конце
+initTable(tableClassName);
 
 /*
     2nd table
 */
 
-// const secondTableClassName = "users-table-1";
+// const tableClassName1 = "users-table-1";
 
-// //create models
-// createPaginationModel(secondTableClassName);
-// createColumnHiderModel(secondTableClassName);
-// createFormModel(secondTableClassName);
+// //Создаем модели
+// createPaginationModel(tableClassName);
+// createColumnHiderModel(tableClassName);
+// createFormModel(tableClassName);
 
-// //init's
-// const numOfUsersOnPageForSecondTable = 5;
-// initTable(secondTableClassName, numOfUsersOnPageForSecondTable);
+// //Инициализируем
+// const numOfUsersOnPage = 5;
+// const formClassName = "edit-form";
 
-// initColumnHider(secondTableClassName);
-// const formClassNameForSecondTable = "edit-form";
-// initForm(secondTableClassName, formClassNameForSecondTable);
+// initPagination(tableClassName, numOfUsersOnPage);
+// initColumnHider(tableClassName);
+// initForm(tableClassName, formClassName);
+
+// // в конце
+// initTable(tableClassName);

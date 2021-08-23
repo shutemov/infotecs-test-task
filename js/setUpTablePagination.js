@@ -14,7 +14,7 @@ import {
  * модуль конфигуратор пагинаций
  */
 
-export const setUpPagination = (tableClassName, numOfEntries) => {
+export const initPagination = (tableClassName, numOfEntries) => {
   setNumOfEntries(tableClassName, numOfEntries);
   setUpPaginationListener(tableClassName);
   insertDataIntoPaginationStats(tableClassName);

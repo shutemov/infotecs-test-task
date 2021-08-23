@@ -7,7 +7,7 @@ import {
 import { getUserById, getUsersByCurrentPage } from "./data.js";
 import { setDataIntoForm } from "./form.js";
 import { setDataIntoFormFields } from "./setUpForm.js";
-import { setUpPagination } from "./setUpTablePagination.js";
+import { initPagination } from "./setUpTablePagination.js";
 import { insertDataIntoTable } from "./table.js";
 
 /**
@@ -16,7 +16,6 @@ import { insertDataIntoTable } from "./table.js";
 
 export const initTable = (tableClassName, numOfIntriesOnPage) => {
   setUpTableListeners(tableClassName);
-  setUpPagination(tableClassName, numOfIntriesOnPage);
   const users = getUsersByCurrentPage(tableClassName);
   insertDataIntoTable(tableClassName, users);
 };
