@@ -7,9 +7,6 @@ import {
   sortByEyeColor,
 } from "./sorting.js";
 
-const users = getAllUsers();
-console.log("users from data manager", users);
-
 export const updateTableByFirstNameAlphabetSorting = (tableClassName) => {
   const sortedUsers = sortByFirstName();
   updateAllUsers(sortedUsers);

@@ -1,15 +1,10 @@
-import { getAllUsers, getUsersByInterval } from "./data.js";
+import { getAllUsers } from "./data.js";
 
 const users = getAllUsers();
-console.log("users from sorting", users);
 
 export const sortByFirstName = () => {
   const action = (current, next) =>
     alphabetComparator(current.name.firstName, next.name.firstName);
-
-  //todo выпилить
-  console.log(getUsersByInterval(0, 10));
-
   return users.sort(action);
 };
 

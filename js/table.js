@@ -47,8 +47,8 @@ const buildContent = (tableClassName, data) => {
 
     for (const prop in orderedRenamedPropByObjectInData) {
       for (const visibleColumn of visibleColumns) {
-        const isPropForVisibleColumn = visibleColumn.includes(prop);
-        if (isPropForVisibleColumn) {
+        const isVisibleColumnProp = visibleColumn.includes(prop);
+        if (isVisibleColumnProp) {
           //create td
           const td = document.createElement("td");
           td.setAttribute("class", `${tableClassName}_${prop}-column-body`);

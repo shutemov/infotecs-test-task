@@ -3,7 +3,6 @@ import {
   getTotalNumOfPages,
   getCurrentPage,
 } from "./pagination.js";
-
 import { insertDataIntoTable } from "./table.js";
 import {
   getNumberOfUser,
@@ -75,5 +74,5 @@ const insertCurrentPageIntoPaginationStats = (tableClassName) => {
   );
   const currentPage = getCurrentPage(tableClassName);
 
-  spanPaginationTotalResults.innerHTML = currentPage + 1; //with 0 
+  spanPaginationTotalResults.innerHTML = currentPage + 1; //with 0
 };
