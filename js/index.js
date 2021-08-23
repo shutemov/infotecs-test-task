@@ -7,7 +7,7 @@ import { createColumnHiderModel } from "./columnHider.js";
 import { initPagination } from "./setUpTablePagination.js";
 
 /**
- * 1-ая таблица 
+ * 1-ая таблица
  */
 
 const tableClassName = "users-table";
@@ -27,24 +27,25 @@ initForm(tableClassName, formClassName);
 // в конце
 initTable(tableClassName);
 
-/*
-    2-ая таблица 
-*/
+/**
+ * 2-ая таблица (+ необходимо расскоменитровать код в index.html)
+ */
+
 
 // const tableClassName1 = "users-table-1";
 
 // //Создаем модели
-// createPaginationModel(tableClassName);
-// createColumnHiderModel(tableClassName);
-// createFormModel(tableClassName);
+// createPaginationModel(tableClassName1);
+// createColumnHiderModel(tableClassName1);
+// createFormModel(tableClassName1);
 
 // //Инициализируем
-// const numOfUsersOnPage = 5;
-// const formClassName = "edit-form";
+// const numOfUsersOnPage1 = 5;
+// const formClassName1 = "edit-form";
 
-// initPagination(tableClassName, numOfUsersOnPage);
-// initColumnHider(tableClassName);
-// initForm(tableClassName, formClassName);
+// initPagination(tableClassName1, numOfUsersOnPage1);
+// initColumnHider(tableClassName1);
+// initForm(tableClassName1, formClassName1);
 
 // // в конце
-// initTable(tableClassName);
+// initTable(tableClassName1);

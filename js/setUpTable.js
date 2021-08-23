@@ -13,7 +13,7 @@ import { insertDataIntoTable } from "./table.js";
  * модуль конфигуратор таблиц
  */
 
-export const initTable = (tableClassName, numOfIntriesOnPage) => {
+export const initTable = (tableClassName) => {
   setUpTableListeners(tableClassName);
   const users = getUsersByCurrentPage(tableClassName);
   insertDataIntoTable(tableClassName, users);
