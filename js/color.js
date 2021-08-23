@@ -1,6 +1,10 @@
+/**
+ * Модуль хранит имена и hex значения цвета для колонки eye color
+ */
+
 export const colourNameToHex = (colour) => {
-  if (typeof colours[colour.toLowerCase()] === "undefined") return false;
-  return colours[colour.toLowerCase()];
+  const lowerCaseColor = colour.toLowerCase();
+  return colours[lowerCaseColor] ? colours[lowerCaseColor] : false;
 };
 
 export const getColors = () => {
