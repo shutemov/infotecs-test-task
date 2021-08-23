@@ -3,34 +3,22 @@ import { getUserById, getUsersByCurrentPage, updateUser } from "./data.js";
 import { insertDataIntoTable } from "./table.js";
 import { getColorsNames } from "./color.js";
 
-// selectors
-let editForm = undefined;
-let editFormItem = undefined;
-let editFormSaveButton = undefined;
-let editFormEyeColorSelect = undefined;
-
 export const initForm = (tableClassName, formClassName) => {
-  initSelectors(tableClassName);
-  setUpFormEvents(tableClassName, formClassName);
-  initEyeColorSelect(tableClassName, formClassName);
-};
-
-const initSelectors = (tableClassName) => {
-  editForm = `.${tableClassName}-edit-form`;
-  editFormItem = `${editForm}__item`;
-  editFormSaveButton = `${editForm}__save-button`;
-  editFormEyeColorSelect = `${editForm}__select`;
+  setUpFormEvents(tableClassName);
+  initEyeColorSelect(tableClassName);
 };
 
 const setUpFormEvents = (tableClassName) => {
-  if (!editForm)
-    throw new Error(`Form class name: ${formClassName} is not defined`);
+  if (!tableClassName)
+    throw new Error(`Form class name for ${tableClassName} is not defined`);
 
   setUpSaveButtonEvent(tableClassName);
 };
 
 const setUpSaveButtonEvent = (tableClassName) => {
-  const saveButton = document.querySelector(editFormSaveButton);
+  const saveButton = document.querySelector(
+    `.${tableClassName}-edit-form__save-button`
+  );
 
   saveButton.addEventListener("click", () => {
     const storage = window.localStorage;
@@ -63,6 +51,19 @@ const setUpSaveButtonEvent = (tableClassName) => {
   });
 };
 
+export const setDataIntoFormFields = (tableClassName) => {
+  const { firstName, lastName, about, eyeColor } =
+    getDataFromForm(tableClassName);
+
+  const [firstNameInput, lastNameInput, aboutTextarea, eyeColorInput] =
+    getInputFields(tableClassName);
+
+  firstNameInput.value = firstName;
+  lastNameInput.value = lastName;
+  aboutTextarea.value = about;
+  eyeColorInput.value = eyeColor;
+};
+
 export const getDataFromFormFields = (tableClassName) => {
   const [firstNameInput, lastNameInput, aboutTextarea, eyeColorSelect] =
     getInputFields(tableClassName);
@@ -87,24 +88,13 @@ export const clearFormFields = (tableClassName) => {
   eyeColorSelect.value = "";
 };
 
-export const setDataIntoFormFields = (tableClassName) => {
-  const { firstName, lastName, about, eyeColor } =
-    getDataFromForm(tableClassName);
-
-  const [firstNameInput, lastNameInput, aboutTextarea, eyeColorInput] =
-    getInputFields(tableClassName);
-
-  firstNameInput.value = firstName;
-  lastNameInput.value = lastName;
-  aboutTextarea.value = about;
-  eyeColorInput.value = eyeColor;
-};
-
 /*
   Каждый 3 элемент item'a содержит значение
 */
-const getInputFields = () => {
-  const nodeListEditFormItems = document.querySelectorAll(editFormItem);
+const getInputFields = (tableClassName) => {
+  const nodeListEditFormItems = document.querySelectorAll(
+    `.${tableClassName}-edit-form__item`
+  );
 
   const formInputFields = Array.from(nodeListEditFormItems).map((item) => {
     return item.childNodes[3];
@@ -113,8 +103,8 @@ const getInputFields = () => {
   return formInputFields;
 };
 
-export const initEyeColorSelect = () => {
-  const select = document.querySelector(editFormEyeColorSelect);
+export const initEyeColorSelect = (tableClassName) => {
+  const select = document.querySelector(`.${tableClassName}-edit-form__select`);
   const allColorNames = getColorsNames();
 
   allColorNames.forEach((color) => {
@@ -123,7 +113,7 @@ export const initEyeColorSelect = () => {
 };
 
 const insertOption = (select, value) => {
-  //create option
+  //create
   const option = document.createElement("option");
   option.value = value;
   option.innerHTML = value;
