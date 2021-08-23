@@ -1,4 +1,5 @@
 import { getNumberOfUser } from "./data.js";
+import { Pagination } from "./models/Pagination.js";
 
 /*
   {
@@ -16,59 +17,53 @@ export const createPaginationModel = (tableClassName) => {
   const isExistPagination = getPagination(tableClassName);
   if (isExistPagination) return;
 
-  const pagination = {
-    table: tableClassName,
-    state: {
-      page: 0,
-      numOfEntries: 1,
-    },
-  };
+  const pagination = new Pagination(tableClassName);
 
   paginations.push(pagination);
 };
 
 export const getPagination = (tableClassName) => {
   return paginations.find((pagination) => {
-    return pagination.table === tableClassName;
+    const targetTableClassName = pagination.getTable();
+    return targetTableClassName === tableClassName;
   });
 };
 
 export const setPage = (tableClassName, page) => {
   const pagination = getPagination(tableClassName);
-  pagination.state.page = page;
+  pagination.setPage(page);
 };
 
 export const setNumOfEntries = (tableClassName, num) => {
   const pagination = getPagination(tableClassName);
-  pagination.state.numOfEntries = num;
+  pagination.setNumOfEntries(num);
 };
 
 export const getCurrentPage = (tableClassName) => {
   const pagination = getPagination(tableClassName);
-  return pagination.state.page;
+  return pagination.getPage();
 };
 
 export const getNumOfEntries = (tableClassName) => {
   const pagination = getPagination(tableClassName);
-  return pagination.state.numOfEntries;
+  return pagination.getNumOfEntries();
 };
 
 export const getTotalNumOfPages = (tableClassName) => {
   const pagination = getPagination(tableClassName);
-  const numOfEntries = pagination.state.numOfEntries;
+  const numOfEntries = pagination.getNumOfEntries();
   const numOfUsers = getNumberOfUser();
   const totalNumOfPages = numOfUsers / numOfEntries;
+
   return totalNumOfPages;
 };
 
 export const increasePage = (tableClassName, num) => {
   const pagination = getPagination(tableClassName);
-  pagination.state.page += num ? num : 1;
-  return pagination.state.page;
+  pagination.increasePage(num);
 };
 
 export const decreasePage = (tableClassName, num) => {
   const pagination = getPagination(tableClassName);
-  pagination.state.page -= num ? num : 1;
-  return pagination.state.page;
+  pagination.decreasePage(num);
 };
